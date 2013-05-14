@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!DOCTYPE superheroes SYSTEM "superheroes.dtd">
 <superheroes>
 	<superhero id="1">
 		<nickname>Iron Man</nickname>
