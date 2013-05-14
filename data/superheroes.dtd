@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT superheroes (superhero*)>
+<!ELEMENT superhero (nickname,first-name,last-name,universe,picture,superpowers,nemeses,lovers,sidekicks) >
+<!ATTLIST superhero id CDATA #REQUIRED>
+
+<!ELEMENT nickname (#PCDATA)>
+<!ELEMENT first-name (#PCDATA)>
+<!ELEMENT last-name (#PCDATA)>
+<!ELEMENT universe (#PCDATA)>
+<!ELEMENT picture (#PCDATA)>
+
+<!ELEMENT superpowers (superpower*)>
+<!ELEMENT superpower (#PCDATA)>
+
+
+<!ELEMENT lovers (lover*)>
+<!ELEMENT lover (#PCDATA)>
+<!ATTLIST lover first-name CDATA #IMPLIED>
+<!ATTLIST lover last-name CDATA #IMPLIED>
+
+
+<!ELEMENT nemeses (nemesis*)>
+<!ELEMENT nemesis (#PCDATA)>
+<!ATTLIST nemesis first-name CDATA #IMPLIED>
+<!ATTLIST nemesis last-name CDATA #IMPLIED>
+
+<!ELEMENT sidekicks (sidekick*)>
+<!ELEMENT sidekick (#PCDATA)>
+<!ATTLIST sidekick first-name CDATA #IMPLIED>
+<!ATTLIST sidekick last-name CDATA #IMPLIED>
