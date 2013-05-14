@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<superheroes>
+	<superhero id="1">
+		<nickname>Iron Man</nickname>
+		<first-name>Tony</first-name>
+		<last-name>Stark</last-name>
+		
+		<universe>Marvel</universe>
+		
+		<picture>https://www.iron-man.com/profile.png</picture>
+		
+		<superpowers>
+			<superpower>Armure en alliage</superpower>
+			<superpower>Voler</superpower>
+			<superpower>Lancer des lasers superpuissants</superpower>
+		</superpowers>
+		
+		<nemeses />
+		
+		<lovers>
+			<lover first-name="Pepper" last-name="Potts" />
+		</lovers>
+		
+		<sidekicks>
+			<sidekick first-name="" last-name="">Jarvis</sidekick>
+		</sidekicks>
+	</superhero>
+	
+	<superhero id="2">
+		<nickname>Black widow</nickname>
+		<first-name>Natasha</first-name>
+		<last-name>Romanova</last-name>
+		
+		<universe>Marvel</universe>
+		
+		<picture>https://www.black-widow.biz/profile.png</picture>
+		
+		<superpowers />
+		
+		<nemeses />
+		
+		<lovers>
+			<lover first-name="Connor" last-name="Hawke">Green Arrow</lover>
+		</lovers>
+		
+		<sidekicks />
+	</superhero>
+	
+	<superhero id="3">
+		<nickname>Hulk</nickname>
+		<first-name>Robert</first-name>
+		<last-name>Banner</last-name>
+		
+		<universe>Marvel</universe>
+		
+		<picture>https://www.geant-vert.com/profile.png</picture>
+		
+		<superpowers>
+			<superpower>Invincible</superpower>
+			<superpower>Se transforme en géant vert</superpower>
+		</superpowers>
+		
+		<nemeses />
+		
+		<lovers />
+		
+		<sidekicks />
+	</superhero>
+	
+	<superhero id="4">
+		<nickname>Thor</nickname>
+		<first-name>Thor</first-name>
+		<last-name>Odinson</last-name>
+		
+		<universe>Marvel</universe>
+		
+		<picture>https://www.thor.no/profile.png</picture>
+		
+		<superpowers>
+			<superpower>Dieu</superpower>
+			<superpower>Contrôle la foudre</superpower>
+			<superpower>Peut manipuler Mjöllnir</superpower>
+		</superpowers>
+		
+		<nemeses>
+			<nemesis first-name="" last-name="">Géants de glace</nemesis>
+		</nemeses>
+		
+		<lovers>
+			<lover first-name="Jane" last-name="Foster" />
+		</lovers>
+		
+		<sidekicks />
+	</superhero>
+	
+	<superhero id="5">
+		<nickname>Batman</nickname>
+		<first-name>Bruce</first-name>
+		<last-name>Wayne</last-name>
+		
+		<universe>DC</universe>
+		
+		<picture>https://www.batman.gratoshebergement.co.nr/profile.png</picture>
+		
+		<superpowers>
+			<superpower>Batmobile</superpower>
+			<superpower>Ceinture de gadgets</superpower>
+			<superpower>Costume de chauve-souris</superpower>
+		</superpowers>
+		
+		<nemeses>
+			<nemesis first-name="" last-name="">Le Joker</nemesis>
+		</nemeses>
+		
+		<lovers>
+			<lover first-name="Harleen" last-name="Quinzel">Harley Quinn</lover>
+		</lovers>
+		
+		<sidekicks>
+			<sidekick first-name="Jason" last-name="Todd">Robin</sidekick>
+			<sidekick first-name="Alfred" last-name="Pennyworth">Alfred</sidekick>
+		</sidekicks>
+	</superhero>
+</superheroes>
+
