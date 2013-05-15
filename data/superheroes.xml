@@ -4,8 +4,8 @@
 <superheroes>
 	<superhero id="1">
 		<nickname>Iron Man</nickname>
-		<first-name>Tony</first-name>
-		<last-name>Stark</last-name>
+		<firstName>Tony</firstName>
+		<lastName>Stark</lastName>
 		
 		<universe>Marvel</universe>
 		
@@ -20,18 +20,18 @@
 		<nemeses />
 		
 		<lovers>
-			<lover first-name="Pepper" last-name="Potts" />
+			<lover firstName="Pepper" lastName="Potts" />
 		</lovers>
 		
 		<sidekicks>
-			<sidekick first-name="" last-name="">Jarvis</sidekick>
+			<sidekick firstName="" lastName="">Jarvis</sidekick>
 		</sidekicks>
 	</superhero>
 	
 	<superhero id="2">
 		<nickname>Black widow</nickname>
-		<first-name>Natasha</first-name>
-		<last-name>Romanova</last-name>
+		<firstName>Natasha</firstName>
+		<lastName>Romanova</lastName>
 		
 		<universe>Marvel</universe>
 		
@@ -42,7 +42,7 @@
 		<nemeses />
 		
 		<lovers>
-			<lover first-name="Connor" last-name="Hawke">Green Arrow</lover>
+			<lover firstName="Connor" lastName="Hawke">Green Arrow</lover>
 		</lovers>
 		
 		<sidekicks />
@@ -50,8 +50,8 @@
 	
 	<superhero id="3">
 		<nickname>Hulk</nickname>
-		<first-name>Robert</first-name>
-		<last-name>Banner</last-name>
+		<firstName>Robert</firstName>
+		<lastName>Banner</lastName>
 		
 		<universe>Marvel</universe>
 		
@@ -71,8 +71,8 @@
 	
 	<superhero id="4">
 		<nickname>Thor</nickname>
-		<first-name>Thor</first-name>
-		<last-name>Odinson</last-name>
+		<firstName>Thor</firstName>
+		<lastName>Odinson</lastName>
 		
 		<universe>Marvel</universe>
 		
@@ -85,11 +85,11 @@
 		</superpowers>
 		
 		<nemeses>
-			<nemesis first-name="" last-name="">Géants de glace</nemesis>
+			<nemesis firstName="" lastName="">Géants de glace</nemesis>
 		</nemeses>
 		
 		<lovers>
-			<lover first-name="Jane" last-name="Foster" />
+			<lover firstName="Jane" lastName="Foster" />
 		</lovers>
 		
 		<sidekicks />
@@ -97,8 +97,8 @@
 	
 	<superhero id="5">
 		<nickname>Batman</nickname>
-		<first-name>Bruce</first-name>
-		<last-name>Wayne</last-name>
+		<firstName>Bruce</firstName>
+		<lastName>Wayne</lastName>
 		
 		<universe>DC</universe>
 		
@@ -111,16 +111,16 @@
 		</superpowers>
 		
 		<nemeses>
-			<nemesis first-name="" last-name="">Le Joker</nemesis>
+			<nemesis firstName="" lastName="">Le Joker</nemesis>
 		</nemeses>
 		
 		<lovers>
-			<lover first-name="Harleen" last-name="Quinzel">Harley Quinn</lover>
+			<lover firstName="Harleen" lastName="Quinzel">Harley Quinn</lover>
 		</lovers>
 		
 		<sidekicks>
-			<sidekick first-name="Jason" last-name="Todd">Robin</sidekick>
-			<sidekick first-name="Alfred" last-name="Pennyworth">Alfred</sidekick>
+			<sidekick firstName="Jason" lastName="Todd">Robin</sidekick>
+			<sidekick firstName="Alfred" lastName="Pennyworth">Alfred</sidekick>
 		</sidekicks>
 	</superhero>
 </superheroes>
