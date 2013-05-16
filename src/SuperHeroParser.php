@@ -7,7 +7,7 @@ class SuperHeroParser
 	 */
 	protected $xml;
 
-	public $characters;
+	protected $characters;
 
 	function __construct($filename = null)
 	{
@@ -106,9 +106,10 @@ class SuperHeroParser
 	{
 		$superHero = new SuperHero();
 
+        $superHero->id = $node->getAttribute('id');
+
 		// Récupération des données statiques
 		foreach(array(
-            'id',
 			'nickname',
 			'firstName',
 			'lastName',
@@ -167,5 +168,10 @@ class SuperHeroParser
         {
             throw new AvengerException("Impossible de charger le héros numéro $id.");
         }
+    }
+
+    public function getAll()
+    {
+        return $this->characters;
     }
 }
