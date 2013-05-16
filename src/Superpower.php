@@ -2,5 +2,5 @@
 
 class Superpower extends SuperThing
 {
-	protected $description;
+	protected $name;
 }

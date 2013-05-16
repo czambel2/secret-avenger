@@ -13,7 +13,7 @@ class SuperHeroParser
 	{
 		if(!$filename)
 		{
-			$filename = "../data/superheroes.xml";
+			$filename = "data/superheroes.xml";
 		}
 
 		$this->xml = new DOMDocument();
@@ -21,58 +21,110 @@ class SuperHeroParser
 		if(!$this->xml->load($filename))
 		{
 			throw new AvengerException("Impossible d'analyser le fichier " .
-			                           $filename);
+			                            $filename);
 		}
 
 		$this->parse();
 	}
 
-	protected function parseSuperHero(DOMElement $superHeroNode)
+	protected function getNodeProperty(DOMElement $superHeroNode, $property)
+	{
+		return $superHeroNode->getElementsByTagName($property)->item(0)->nodeValue;
+	}
+
+	protected function parseSuperpowers(DOMElement $superHeroNode)
+	{
+		$superpowersNode = $superHeroNode->getElementsByTagName('superpowers')->item(0);
+
+		$superpowers = array();
+
+		foreach($superpowersNode->getElementsByTagName('superpower') as $superpowerNode)
+		{
+			$superpower = new Superpower();
+			$superpower->name = $superpowerNode->nodeValue;
+			$superpowers[] = $superpower;
+		}
+
+		return $superpowers;
+	}
+
+	protected function parseNemeses(DOMElement $superHeroNode)
+	{
+		$nemesesNode = $superHeroNode->getElementsByTagName('nemeses')->item(0);
+
+		$nemeses = array();
+
+		foreach($nemesesNode->getElementsByTagName('nemesis') as $nemesisNode)
+		{
+			$nemesis = new Nemesis();
+			$nemesis->nickname = $nemesisNode->nodeValue;
+			$nemesis->firstName = $nemesisNode->getAttribute('firstName');
+			$nemesis->lastName = $nemesisNode->getAttribute('lastName');
+			$nemeses[] = $nemesis;
+		}
+
+		return $nemeses;
+	}
+
+	protected function parseLovers(DOMElement $superHeroNode)
+	{
+		$loversNode = $superHeroNode->getElementsByTagName('lovers')->item(0);
+
+		$lovers = array();
+
+		foreach($loversNode->getElementsByTagName('lover') as $loverNode)
+		{
+			$lover = new Lover();
+			$lover->nickname = $loverNode->nodeValue;
+			$lover->firstName = $loverNode->getAttribute('firstName');
+			$lover->lastName = $loverNode->getAttribute('lastName');
+			$lovers[] = $lover;
+		}
+
+		return $lovers;
+	}
+
+	protected function parseSidekicks(DOMElement $superHeroNode)
+	{
+		$sidekicksNode = $superHeroNode->getElementsByTagName('sidekicks')->item(0);
+
+		$sidekicks = array();
+
+		foreach($sidekicksNode->getElementsByTagName('sidekick') as $sidekickNode)
+		{
+			$sidekick = new Sidekick();
+			$sidekick->nickname = $sidekickNode->nodeValue;
+			$sidekick->firstName = $sidekickNode->getAttribute('firstName');
+			$sidekick->lastName = $sidekickNode->getAttribute('lastName');
+			$sidekicks[] = $sidekick;
+		}
+
+		return $sidekicks;
+	}
+
+	protected function parseSuperHero(DOMElement $node)
 	{
 		$superHero = new SuperHero();
 
-		foreach($superHeroNode->childNodes as $node)
+		// Récupération des données statiques
+		foreach(array(
+			'nickname',
+			'firstName',
+			'lastName',
+			'universe',
+			'picture',
+				) as $property)
 		{
-			if($node->nodeType == XML_ELEMENT_NODE)
-			{
-				$name = $node->nodeName;
-				$value = $this->parseNode($node);
-
-				$superHero->$name = $value;
-			}
+			$superHero->$property = $this->getNodeProperty($node, $property);
 		}
+
+		// Récupération des données objet
+		$superHero->superpowers = $this->parseSuperpowers($node);
+		$superHero->nemeses = $this->parseNemeses($node);
+		$superHero->lovers = $this->parseLovers($node);
+		$superHero->sidekicks = $this->parseSidekicks($node);
 
 		return $superHero;
-	}
-
-	protected function parseNode(DOMNode $node)
-	{
-		$singleValue = null;
-		$values = array();
-
-		// Parcours de tous les fils du noeud
-		foreach($node->childNodes as $childNode)
-		{
-			// Si le noeud contient des éléments fils, on les analyse à leur
-			// tour
-			if($childNode->nodeType == XML_ELEMENT_NODE)
-			{
-				$values[] = $this->parseNode($childNode);
-			}
-			// Si le noeud contient du texte, on le récupère
-			elseif($childNode->nodeType == XML_ATTRIBUTE_NODE or
-			       $childNode->nodeType == XML_TEXT_NODE)
-			{
-				// On ne récupère pas les noeuds de whitespace
-				if(trim($childNode->nodeValue) != "")
-				{
-					$singleValue = $childNode->nodeValue;
-				}
-			}
-		}
-
-		// php 5.3 : return $singleValue ?: $values;
-		return count($values) ? $values : $singleValue;
 	}
 
 	/**

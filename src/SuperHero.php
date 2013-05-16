@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * @property string $nickname
+ * @property string $firstName
+ * @property string $lastName
+ * @property string $universe
+ * @property string $picture
+ * @property array  $superpowers
+ * @property array  $nemeses
+ * @property array  $lovers
+ * @property array  $sidekicks
+ */
 class SuperHero extends SuperThing
 {
 	protected $nickname;
@@ -22,11 +33,11 @@ class SuperHero extends SuperThing
 		var_dump($v);
 	}
 	
-	public function __contruct(){
+	public function __contruct()
+	{
 		$this->superpowers = array();
 		$this->nemeses = array();
 		$this->lovers = array();
 		$this->sidekicks = array();
 	}
-
 }

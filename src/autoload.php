@@ -2,9 +2,11 @@
 
 function autoload($className)
 {
-	if(file_exists($className . '.php'))
+    $filename = 'src/' . $className . '.php';
+
+    if(file_exists($filename))
 	{
-		require_once($className . '.php');
+		require_once($filename);
 	}
 }
 
