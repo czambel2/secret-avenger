@@ -2,12 +2,17 @@
 
 function autoload($className)
 {
-    $filename = 'src/' . $className . '.php';
+    $directories = array('src/', 'src/entity/');
 
-    if(file_exists($filename))
-	{
-		require_once($filename);
-	}
+    foreach($directories as $directory)
+    {
+        $filename = $directory . $className . '.php';
+
+        if(file_exists($filename))
+        {
+            require_once($filename);
+        }
+    }
 }
 
 spl_autoload_register('autoload');
