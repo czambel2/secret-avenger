@@ -21,4 +21,12 @@ class SuperHero extends SuperThing
 		}
 		var_dump($v);
 	}
+	
+	public function __contruct(){
+		$this->superpowers = array();
+		$this->nemeses = array();
+		$this->lovers = array();
+		$this->sidekicks = array();
+	}
+
 }
