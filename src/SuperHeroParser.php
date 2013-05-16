@@ -20,7 +20,8 @@ class SuperHeroParser
 
 		if(!$this->xml->load($filename))
 		{
-			throw new AvengerException("Impossible d'analyser le fichier $filename");
+			throw new AvengerException("Impossible d'analyser le fichier " .
+			                           $filename);
 		}
 
 		$this->parse();
@@ -52,13 +53,15 @@ class SuperHeroParser
 		// Parcours de tous les fils du noeud
 		foreach($node->childNodes as $childNode)
 		{
-			// Si le noeud contient des éléments fils, on les analyse à leur tour
+			// Si le noeud contient des éléments fils, on les analyse à leur
+			// tour
 			if($childNode->nodeType == XML_ELEMENT_NODE)
 			{
 				$values[] = $this->parseNode($childNode);
 			}
 			// Si le noeud contient du texte, on le récupère
-			elseif($childNode->nodeType == XML_ATTRIBUTE_NODE or $childNode->nodeType == XML_TEXT_NODE)
+			elseif($childNode->nodeType == XML_ATTRIBUTE_NODE or
+			       $childNode->nodeType == XML_TEXT_NODE)
 			{
 				// On ne récupère pas les noeuds de whitespace
 				if(trim($childNode->nodeValue) != "")
@@ -73,7 +76,8 @@ class SuperHeroParser
 	}
 
 	/**
-	 * Analyse le fichier XML chargé dans $this->xml et récupère une liste de super-héros.
+	 * Analyse le fichier XML chargé dans $this->xml et récupère une liste de
+	 * super-héros.
 	 */
 	protected function parse()
 	{
@@ -82,7 +86,8 @@ class SuperHeroParser
 
 		if($superHeroesTags->length != 1)
 		{
-			throw new AvengerException("Malformation du fichier XML : il manque le noeud racine <superheroes>, ou il y en a plusieurs.");
+			throw new AvengerException("Malformation du fichier XML : il
+			   manque le noeud racine <superheroes>, ou il y en a plusieurs.");
 		}
 
 		$superHeroesTag = $superHeroesTags->item(0);

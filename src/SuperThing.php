@@ -36,7 +36,7 @@ class SuperThing
 		}
 		else
 		{
-			throw new AvengerException('Impossible de récupérer la propriété ' . get_class($this) . '::' . $name);
+			throw new AvengerException('Impossible de définir la propriété ' . get_class($this) . '::' . $name);
 		}
 	}
 }
