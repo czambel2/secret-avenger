@@ -108,6 +108,7 @@ class SuperHeroParser
 
 		// Récupération des données statiques
 		foreach(array(
+            'id',
 			'nickname',
 			'firstName',
 			'lastName',
@@ -155,4 +156,16 @@ class SuperHeroParser
 
 		$this->characters = $characters;
 	}
+
+    public function getSuperHeroById($id)
+    {
+        if(array_key_exists($id, $this->characters))
+        {
+            return $this->characters[$id];
+        }
+        else
+        {
+            throw new AvengerException("Impossible de charger le héros numéro $id.");
+        }
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @property int    $id
  * @property string $nickname
  * @property string $firstName
  * @property string $lastName
@@ -13,6 +14,7 @@
  */
 class SuperHero extends SuperThing
 {
+    protected $id;
 	protected $nickname;
 	protected $firstName;
 	protected $lastName;
