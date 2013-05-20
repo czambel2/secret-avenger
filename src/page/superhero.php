@@ -4,23 +4,27 @@ $parse = new SuperHeroParser();
 $superhero = $parse->getSuperHeroById($id);
 $return = <<<EOF
 <style>
-	.info{
+	.main{
 width: 960px;
 margin: 16px auto 0 auto;
 background-color: #ff6060;
 padding: 8px;
 border: 8px red solid;
 border-radius: 16px;
-display: block;
 	}
 	
-.img{
-	float:left;
+.info{
 	position:relative;
-	width:50%;
+	width:80%;
+	display:inline;
+}
+.img{
+	position:relative;
+	width:80%;
+	display:inline;
 }
 </style>
-<div>
+<div class="main">
 <div class="info">
 <ul>
 	<li><strong>Surnom</strong> {$superhero->nickname}</li>
@@ -78,10 +82,7 @@ $return .= <<<EOF
 	</ul>
 </div>
 <div class="img">
-<img src="{$superhero->picture}" />
-</div>
-<div>
-
+	<img style="width:80%;padding:10%;" src="{$superhero->picture}" />
 </div>
 </div>
 EOF;
