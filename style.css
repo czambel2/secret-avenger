@@ -54,12 +54,6 @@ nav ul li a {
 	color: #fff;
 }
 
-div.ceci.pas.pub {
-	margin: 16px auto;
-	width: 940px;
-	height: 60px;
-}
-
 .super-hero-list {
 	margin: 8px auto;
 	width: 960px;
@@ -68,11 +62,27 @@ div.ceci.pas.pub {
 
 .super-hero-list li {
 	display: inline-block;
-	list-style: none;
 	margin: 8px;
+	padding: 0;
+}
+
+.super-hero-list li a {
+	display: inline-block;
+	margin: 0;
 	padding: 8px;
 	width: 424px;
 	border: 4px #ff6060 solid;
 	border-radius: 4px;
 	background-color: #ffa8a8;
+	text-align: center;
+	color: #ff6060;
+}
+
+.super-hero-list li img {
+	width: 192px;
+	margin: 8px auto;
+	display: block;
+	border: 1px #ffa8a8 solid;
+	outline: 1px #ff6060 solid;
+	border-radius: 3px;
 }
