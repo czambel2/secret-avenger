@@ -121,3 +121,8 @@ footer {
 footer p {
 	margin: 4px;
 }
+
+footer a {
+	text-decoration: underline;
+	color: #ccc;
+}
