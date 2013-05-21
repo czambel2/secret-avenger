@@ -152,12 +152,18 @@ class SuperHeroParser
 		$this->characters = $characters;
 	}
 
+	/**
+	 * Tente de récupérer un super-héros par son identifiant.
+	 * @param  int       $id       l'identifiant du super-héros à récupérer.
+	 * @return SuperHero           le super-héros récupéré.
+	 * @throws Avenger404Exception si aucun super-héros correspondant n'est trouvé.
+	 */
 	public function getSuperHeroById($id)
 	{
 		if (array_key_exists($id, $this->characters)) {
 			return $this->characters[$id];
 		} else {
-			throw new AvengerException("Impossible de charger le héros numéro $id.");
+			throw new Avenger404Exception("Impossible de charger le héros numéro $id.");
 		}
 	}
 
