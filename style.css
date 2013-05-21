@@ -67,3 +67,22 @@ div.ceci.pas.pub
 	width: 940px;
 	height: 60px;
 }
+
+.super-hero-list
+{
+	margin: 8px auto;
+	width: 960px;
+	padding: 0;
+}
+
+.super-hero-list li
+{
+	display: inline-block;
+	list-style: none;
+	margin: 8px;
+	padding: 8px;
+	width: 424px;
+	border: 4px #ff6060 solid;
+	border-radius: 4px;
+	background-color: #ffa8a8;
+}
