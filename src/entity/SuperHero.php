@@ -14,7 +14,7 @@
  */
 class SuperHero extends SuperThing
 {
-    protected $id;
+	protected $id;
 	protected $nickname;
 	protected $firstName;
 	protected $lastName;
@@ -28,13 +28,12 @@ class SuperHero extends SuperThing
 	public function dump()
 	{
 		$v = array();
-		foreach($this as $key => $value)
-		{
+		foreach ($this as $key => $value) {
 			$v[$key] = $value;
 		}
 		var_dump($v);
 	}
-	
+
 	public function __contruct()
 	{
 		$this->superpowers = array();

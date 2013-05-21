@@ -2,7 +2,7 @@
 
 class Lover extends SuperThing
 {
-    protected $nickname;
+	protected $nickname;
 	protected $firstName;
 	protected $lastName;
 }

@@ -35,41 +35,41 @@ border-radius: 16px;
 EOF;
 
 $power = "<li><strong>Superpower</strong><ul>";
-foreach($superhero->superpowers as $superpower){
+foreach ($superhero->superpowers as $superpower) {
 	$power .= <<<EOF
 			<li>{$superpower->name}</li>
 EOF;
-	}
+}
 $power .= <<<EOF
 	</ul></li>
 EOF;
 
 $nemeses = "<li><strong>Nemeses</strong><ul>";
-foreach($superhero->nemeses as $nemesis){
+foreach ($superhero->nemeses as $nemesis) {
 	$nemeses .= <<<EOF
 				<li>{$nemesis->firstName} {$nemesis->lastName}: {$nemesis->nickname} </li>		
 EOF;
-	}
+}
 $nemeses .= <<<EOF
 	</ul></li>
 EOF;
 
 $lovers = "<li><strong>Lovers</strong><ul>";
-foreach($superhero->lovers as $lover){
+foreach ($superhero->lovers as $lover) {
 	$lovers .= <<<EOF
 				<li>{$lover->firstName} {$lover->lastName}: {$lover->nickname} </li>
 EOF;
-	}
+}
 $lovers .= <<<EOF
 	</ul></li>
 EOF;
 
 $sidekicks = "<li><strong>SideKicks</strong><ul>";
-foreach($superhero->sidekicks as $sidekick){
+foreach ($superhero->sidekicks as $sidekick) {
 	$sidekicks .= <<<EOF
 				<li>{$sidekick->firstName} {$sidekick->lastName}: {$sidekick->nickname} </li>
 EOF;
-	}
+}
 $sidekicks .= <<<EOF
 	</ul></li>
 EOF;

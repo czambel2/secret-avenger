@@ -1,12 +1,10 @@
-body
-{
+body {
 	font-family: Ubuntu, sans-serif;
 	background-color: #0b61a4;
 	color: #fff;
 }
 
-header
-{
+header {
 	width: 960px;
 	margin: 16px auto 0 auto;
 	text-align: center;
@@ -17,27 +15,23 @@ header
 	display: block;
 }
 
-header h1
-{
+header h1 {
 	font-size: 36pt;
 	font-weight: bold;
 }
 
-nav
-{
+nav {
 	margin: 0 auto;
 	width: 960px;
 }
 
-nav ul
-{
+nav ul {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 }
 
-nav ul li
-{
+nav ul li {
 	list-style: none;
 	display: inline-block;
 	height: 32px;
@@ -52,8 +46,7 @@ nav ul li
 	margin: 0 16px;
 }
 
-nav ul li a
-{
+nav ul li a {
 	display: inline-block;
 	margin: 0;
 	padding: 8px 16px;
@@ -61,22 +54,19 @@ nav ul li a
 	color: #fff;
 }
 
-div.ceci.pas.pub
-{
+div.ceci.pas.pub {
 	margin: 16px auto;
 	width: 940px;
 	height: 60px;
 }
 
-.super-hero-list
-{
+.super-hero-list {
 	margin: 8px auto;
 	width: 960px;
 	padding: 0;
 }
 
-.super-hero-list li
-{
+.super-hero-list li {
 	display: inline-block;
 	list-style: none;
 	margin: 8px;

@@ -11,17 +11,15 @@ class SuperHeroParser
 
 	function __construct($filename = null)
 	{
-		if(!$filename)
-		{
+		if (!$filename) {
 			$filename = "data/superheroes.xml";
 		}
 
 		$this->xml = new DOMDocument();
 
-		if(!$this->xml->load($filename))
-		{
+		if (!$this->xml->load($filename)) {
 			throw new AvengerException("Impossible d'analyser le fichier " .
-			                            $filename);
+				$filename);
 		}
 
 		$this->parse();
@@ -38,8 +36,7 @@ class SuperHeroParser
 
 		$superpowers = array();
 
-		foreach($superpowersNode->getElementsByTagName('superpower') as $superpowerNode)
-		{
+		foreach ($superpowersNode->getElementsByTagName('superpower') as $superpowerNode) {
 			$superpower = new Superpower();
 			$superpower->name = $superpowerNode->nodeValue;
 			$superpowers[] = $superpower;
@@ -54,8 +51,7 @@ class SuperHeroParser
 
 		$nemeses = array();
 
-		foreach($nemesesNode->getElementsByTagName('nemesis') as $nemesisNode)
-		{
+		foreach ($nemesesNode->getElementsByTagName('nemesis') as $nemesisNode) {
 			$nemesis = new Nemesis();
 			$nemesis->nickname = $nemesisNode->nodeValue;
 			$nemesis->firstName = $nemesisNode->getAttribute('firstName');
@@ -72,8 +68,7 @@ class SuperHeroParser
 
 		$lovers = array();
 
-		foreach($loversNode->getElementsByTagName('lover') as $loverNode)
-		{
+		foreach ($loversNode->getElementsByTagName('lover') as $loverNode) {
 			$lover = new Lover();
 			$lover->nickname = $loverNode->nodeValue;
 			$lover->firstName = $loverNode->getAttribute('firstName');
@@ -90,8 +85,7 @@ class SuperHeroParser
 
 		$sidekicks = array();
 
-		foreach($sidekicksNode->getElementsByTagName('sidekick') as $sidekickNode)
-		{
+		foreach ($sidekicksNode->getElementsByTagName('sidekick') as $sidekickNode) {
 			$sidekick = new Sidekick();
 			$sidekick->nickname = $sidekickNode->nodeValue;
 			$sidekick->firstName = $sidekickNode->getAttribute('firstName');
@@ -106,17 +100,16 @@ class SuperHeroParser
 	{
 		$superHero = new SuperHero();
 
-        $superHero->id = $node->getAttribute('id');
+		$superHero->id = $node->getAttribute('id');
 
 		// Récupération des données statiques
-		foreach(array(
-			'nickname',
-			'firstName',
-			'lastName',
-			'universe',
-			'picture',
-				) as $property)
-		{
+		foreach (array(
+			         'nickname',
+			         'firstName',
+			         'lastName',
+			         'universe',
+			         'picture',
+		         ) as $property) {
 			$superHero->$property = $this->getNodeProperty($node, $property);
 		}
 
@@ -138,8 +131,7 @@ class SuperHeroParser
 		// Récupération du noeud parent 'superheroes'
 		$superHeroesTags = $this->xml->getElementsByTagName('superheroes');
 
-		if($superHeroesTags->length != 1)
-		{
+		if ($superHeroesTags->length != 1) {
 			throw new AvengerException("Malformation du fichier XML : il
 			   manque le noeud racine <superheroes>, ou il y en a plusieurs.");
 		}
@@ -150,28 +142,24 @@ class SuperHeroParser
 		$characters = array();
 
 		// Parcours de la liste des super-héros trouvés
-		foreach($superHeroes as $superHero)
-		{
+		foreach ($superHeroes as $superHero) {
 			$characters[] = $this->parseSuperHero($superHero);
 		}
 
 		$this->characters = $characters;
 	}
 
-    public function getSuperHeroById($id)
-    {
-        if(array_key_exists($id, $this->characters))
-        {
-            return $this->characters[$id];
-        }
-        else
-        {
-            throw new AvengerException("Impossible de charger le héros numéro $id.");
-        }
-    }
+	public function getSuperHeroById($id)
+	{
+		if (array_key_exists($id, $this->characters)) {
+			return $this->characters[$id];
+		} else {
+			throw new AvengerException("Impossible de charger le héros numéro $id.");
+		}
+	}
 
-    public function getAll()
-    {
-        return $this->characters;
-    }
+	public function getAll()
+	{
+		return $this->characters;
+	}
 }
