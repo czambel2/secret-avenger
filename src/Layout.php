@@ -47,11 +47,11 @@ class Layout
 				<p>La base internationale des super-héros</p>
 			</a>
 		</header>
-		<nav>
+		<!-- <nav>
 			<ul>
 				<li><a href="." title="Accéder à la page d'accueil">Accueil</a></li>
 			</ul>
-		</nav>
+		</nav> -->
 		{$contents}
 		<footer>
 			<p>
