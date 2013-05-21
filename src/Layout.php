@@ -42,14 +42,14 @@ class Layout
 	</head>
 	<body>
 		<header>
-			<a href=".">
+			<a href="." title="Accéder à la page d'accueil">
 				<h1>SecretAvenger</h1>
 				<p>La base internationale des super-héros</p>
 			</a>
 		</header>
 		<nav>
 			<ul>
-				<li><a href=".">Accueil</a></li>
+				<li><a href="." title="Accéder à la page d'accueil">Accueil</a></li>
 			</ul>
 		</nav>
 		{$contents}
