@@ -108,6 +108,7 @@ class SuperHeroParser
 			         'firstName',
 			         'lastName',
 			         'universe',
+			         'description',
 			         'picture',
 		         ) as $property) {
 			$superHero->$property = $this->getNodeProperty($node, $property);

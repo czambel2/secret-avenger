@@ -9,6 +9,15 @@
 
 		<universe>Marvel</universe>
 
+		<description>
+			<![CDATA[
+				Iron Man (littéralement l'Homme de Fer) est un super-héros de comics créé en 1963 par Stan Lee pour
+				Marvel Comics. Apparu pour la première fois dans Tales Of Suspense #39, la série était scénarisée par
+				Larry Lieber et dessinée par Don Heck. À partir de 1968, le personnage a eu son propre comic qui a été
+				publié par Marvel jusqu'en 1996 avec le no 332.
+			]]>
+		</description>
+
 		<picture>iron-man.png</picture>
 
 		<superpowers>
@@ -35,6 +44,15 @@
 
 		<universe>Marvel</universe>
 
+		<description>
+			<![CDATA[
+				La Veuve noire (Black Widow) est le nom de deux personnages d'espionne russe des comics Marvel. La
+				première et la plus connue est Natalia Romanova ou Natasha Romanoff, d'abord apparue comme ennemie
+				d'Iron Man dans Tales of Suspense #52 (1964), puis reconvertie en super-héroïne. Elle a été créée par
+				Stan Lee, Don Rico et Don Heck.
+			]]>
+		</description>
+
 		<picture>black-widow.png</picture>
 
 		<superpowers/>
@@ -54,6 +72,15 @@
 		<lastName>Banner</lastName>
 
 		<universe>Marvel</universe>
+
+		<description>
+			<![CDATA[
+				Hulk est un personnage de fiction appartenant à l'univers de Marvel Comics. Créé par Stan Lee et Jack
+				Kirby, il est apparu pour la première fois dans le comic The Incredible Hulk #1 de mai 1962. Dans le
+				classement du magazine Wizard, paru en juin 2008, Hulk a été classé dix-neuvième parmi les meilleurs
+				personnages de comic books.
+			]]>
+		</description>
 
 		<picture>hulk.png</picture>
 
@@ -75,6 +102,15 @@
 		<lastName>Odinson</lastName>
 
 		<universe>Marvel</universe>
+
+		<description>
+			<![CDATA[
+				Thor est un dieu et un super-héros appartenant à l'univers de Marvel Comics. Créé par l'éditeur Stan
+				Lee, le scénariste Larry Lieber et le dessinateur Jack Kirby, ce personnage de fiction est apparu pour
+				la première fois dans le comic book Journey into Mystery #83 (août 1962). C'est une divinité, un
+				asgardien qui est basé sur son homologue dans la mythologie nordique.
+			]]>
+		</description>
 
 		<picture>thor.png</picture>
 
@@ -101,6 +137,16 @@
 		<lastName>Wayne</lastName>
 
 		<universe>DC</universe>
+
+		<description>
+			<![CDATA[
+				Batman est un personnage de fiction créé par Bob Kane et Bill Finger dans Detective Comics #27 en mai
+				1939. C'est un héros, à l'origine nommé "Bat-Man", qui a la particularité d’être sans pouvoirs. L'homme
+				qui se cache sous ce costume est connu sous le nom de Bruce Wayne, bien que le costume et le nom aient
+				été quelquefois utilisés par d'autres. Des surnoms lui sont parfois accolés : The caped crusader, The
+				Dark Knight, The world greatest Detective.
+			]]>
+		</description>
 
 		<picture>batman.png</picture>
 
