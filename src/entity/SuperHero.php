@@ -41,4 +41,9 @@ class SuperHero extends SuperThing
 		$this->lovers = array();
 		$this->sidekicks = array();
 	}
+
+	public function __toString()
+	{
+		return $this->nickname ? $this->nickname : $this->firstName . " " . $this->lastName;
+	}
 }
