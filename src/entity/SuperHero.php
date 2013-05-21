@@ -19,6 +19,7 @@ class SuperHero extends SuperThing
 	protected $firstName;
 	protected $lastName;
 	protected $universe;
+	protected $description;
 	protected $picture;
 	protected $superpowers;
 	protected $nemeses;
