@@ -26,15 +26,6 @@ class SuperHero extends SuperThing
 	protected $lovers;
 	protected $sidekicks;
 
-	public function dump()
-	{
-		$v = array();
-		foreach ($this as $key => $value) {
-			$v[$key] = $value;
-		}
-		var_dump($v);
-	}
-
 	public function __contruct()
 	{
 		$this->superpowers = array();
