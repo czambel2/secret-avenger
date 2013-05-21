@@ -143,7 +143,9 @@ class SuperHeroParser
 
 		// Parcours de la liste des super-héros trouvés
 		foreach ($superHeroes as $superHero) {
-			$characters[] = $this->parseSuperHero($superHero);
+			$character = $this->parseSuperHero($superHero);
+			$id = $character->id;
+			$characters[$id] = $character;
 		}
 
 		$this->characters = $characters;
