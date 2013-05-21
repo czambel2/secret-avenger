@@ -1,18 +1,36 @@
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
 	font-family: Ubuntu, sans-serif;
 	background-color: #0b61a4;
 	color: #fff;
+	width: 960px;
+	margin: 0 auto;
+	outline: 8px yellow dashed;
+
 }
 
 header {
 	width: 960px;
 	margin: 16px auto 0 auto;
 	text-align: center;
-	background-color: #ff6060;
+	padding: 0;
+	display: block;
+}
+
+header a {
+	overflow: auto;
+	display: block;
+	text-decoration: none;
+	color: #fff;
 	padding: 8px;
+	background-color: #ff6060;
 	border: 8px red solid;
 	border-radius: 16px;
-	display: block;
 }
 
 header h1 {
@@ -27,21 +45,14 @@ nav {
 
 nav ul {
 	text-align: center;
-	margin: 0;
+	margin: 0 0 16px 0;
 	padding: 0;
 }
 
 nav ul li {
 	list-style: none;
 	display: inline-block;
-	height: 32px;
 	font-size: 12pt;
-	background-color: #ff6060;
-	border-right: 8px red solid;
-	border-left: 8px red solid;
-	border-bottom: 8px red solid;
-	border-bottom-right-radius: 8px;
-	border-bottom-left-radius: 8px;
 	padding: 0;
 	margin: 0 16px;
 }
@@ -52,12 +63,19 @@ nav ul li a {
 	padding: 8px 16px;
 	text-decoration: none;
 	color: #fff;
+	background-color: #ff6060;
+	border-right: 8px red solid;
+	border-left: 8px red solid;
+	border-bottom: 8px red solid;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
 }
 
 .super-hero-list {
 	margin: 8px auto;
 	width: 960px;
 	padding: 0;
+	text-align: center;
 }
 
 .super-hero-list li {
@@ -70,12 +88,13 @@ nav ul li a {
 	display: inline-block;
 	margin: 0;
 	padding: 8px;
-	width: 424px;
+	width: 464px;
 	border: 4px #ff6060 solid;
 	border-radius: 4px;
 	background-color: #ffa8a8;
 	text-align: center;
 	color: #ff6060;
+	text-decoration: none;
 }
 
 .super-hero-list li img {
@@ -85,4 +104,20 @@ nav ul li a {
 	border: 1px #ffa8a8 solid;
 	outline: 1px #ff6060 solid;
 	border-radius: 3px;
+}
+
+footer {
+	border: 8px #f00 solid;
+	background-color: #ff6060;
+	width: 960px;
+	border-radius: 16px;
+	margin: 16px auto;
+	padding: 8px;
+	font-size: 10pt;
+	color: #ccc;
+	text-align: center;
+}
+
+footer p {
+	margin: 4px;
 }
