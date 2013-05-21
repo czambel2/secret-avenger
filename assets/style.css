@@ -103,6 +103,58 @@ nav ul li a {
 	border-radius: 3px;
 }
 
+section.main {
+	background-color: #ff6060;
+	border: 8px red solid;
+	padding: 8px;
+	margin: 16px 0;
+	border-radius: 16px;
+}
+
+img.thumbnail
+{
+	float: left;
+	margin: 16px;
+	border: 2px #ffa8a8 solid;
+	outline: 2px #ff6060 solid;
+}
+
+aside.identity-card:after
+{
+	display: block;
+	clear: left;
+}
+
+aside.identity-card p {
+	text-align: justify;
+}
+
+.characteristics {
+	text-align: center;
+}
+
+.characteristics aside {
+	vertical-align: top;
+	display: inline-block;
+	width: 25%;
+	margin: 0;
+}
+
+.characteristics aside h3 {
+	font-size: 14pt;
+	text-align: center;
+}
+
+.characteristics aside ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+}
+
+.characteristics aside ul li {
+	display: inline-block;
+}
+
 footer {
 	border: 8px #f00 solid;
 	background-color: #ff6060;

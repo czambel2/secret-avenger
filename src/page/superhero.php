@@ -1,94 +1,63 @@
 <?php
-$id = $_GET['id'];
-$parse = new SuperHeroParser();
-$superhero = $parse->getSuperHeroById($id);
-$return = <<<EOF
-<style>
-	.main{
-width: 960px;
-margin: 16px auto 0 auto;
-background-color: #ff6060;
-padding: 8px;
-border: 8px red solid;
-border-radius: 16px;
-	}
-	
-.info{
-	position:relative;
-	width:80%;
-	display:inline;
+
+// On vérifie que l'identifiant a bien été fourni en paramètre
+if(!array_key_exists('id', $_GET) or !is_numeric($id = $_GET['id']))
+{
+	throw new Avenger404Exception("Le super-héros n'a pas été fourni en paramètre.");
 }
-.img{
-	position:relative;
-	width:80%;
-	display:inline;
-}
-</style>
-<div class="main">
-<div class="info">
-<ul>
-	<li><strong>Surnom</strong> {$superhero->nickname}</li>
-	<li><strong>Prénom</strong> {$superhero->firstName}</li>
-	<li><strong>Nom</strong> {$superhero->lastName}</li>
-	<li><strong>Univers</strong> {$superhero->universe}</li>
 
-EOF;
+$parser = new SuperHeroParser();
+$superhero = $parser->getSuperHeroById($id);
 
-$power = "<li><strong>Superpower</strong><ul>";
-foreach ($superhero->superpowers as $superpower) {
-	$power .= <<<EOF
-			<li>{$superpower->name}</li>
-EOF;
-}
-$power .= <<<EOF
-	</ul></li>
-EOF;
-
-$nemeses = "<li><strong>Nemeses</strong><ul>";
-foreach ($superhero->nemeses as $nemesis) {
-	$nemeses .= <<<EOF
-				<li>{$nemesis->firstName} {$nemesis->lastName}: {$nemesis->nickname} </li>		
-EOF;
-}
-$nemeses .= <<<EOF
-	</ul></li>
-EOF;
-
-$lovers = "<li><strong>Lovers</strong><ul>";
-foreach ($superhero->lovers as $lover) {
-	$lovers .= <<<EOF
-				<li>{$lover->firstName} {$lover->lastName}: {$lover->nickname} </li>
-EOF;
-}
-$lovers .= <<<EOF
-	</ul></li>
-EOF;
-
-$sidekicks = "<li><strong>SideKicks</strong><ul>";
-foreach ($superhero->sidekicks as $sidekick) {
-	$sidekicks .= <<<EOF
-				<li>{$sidekick->firstName} {$sidekick->lastName}: {$sidekick->nickname} </li>
-EOF;
-}
-$sidekicks .= <<<EOF
-	</ul></li>
-EOF;
-
-$return .= <<<EOF
-		{$power}
-		{$nemeses}
-		{$lovers}
-		{$sidekicks}
-	</ul>
-</div>
-<div class="img">
-	<img style="width:80%;padding:10%;" src="{$superhero->picture}" />
-</div>
-</div>
-EOF;
-
-echo $return;
 ?>
 
+	<section class="main">
+		<img class="thumbnail" src="assets/<?php echo $superhero->picture; ?>" alt="<?php echo $superhero->nickname; ?>" />
+		<aside class="identity-card">
+			<h2>
+				<?php echo $superhero->nickname; ?>
 
- 
+				<?php if($superhero->getRealName()): ?>
+					<small>(<?php echo $superhero->getRealName(); ?>)</small>
+				<?php endif; ?>
+			</h2>
+			<p>Super-héros de <?php echo $superhero->universe; ?></p>
+			<p class="description">
+				<?php echo $superhero->description; ?>
+			</p>
+		</aside>
+		<div class="characteristics"><?php
+			if($superhero->superpowers): ?><aside class="superpowers">
+				<h3>Pouvoirs de <?php echo $superhero; ?></h3>
+				<ul>
+					<?php foreach($superhero->superpowers as $superpower): ?>
+						<li><?php echo $superpower; ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</aside><?php endif;
+			if($superhero->nemeses): ?><aside class="nemeses">
+				<h3>Némésis de <?php echo $superhero; ?></h3>
+				<ul>
+					<?php foreach($superhero->nemeses as $nemesis): ?>
+						<li><?php echo $nemesis; ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</aside><?php endif;
+			if($superhero->lovers): ?><aside class="lovers">
+				<h3>Amants de <?php echo $superhero; ?></h3>
+				<ul>
+					<?php foreach($superhero->lovers as $lover): ?>
+						<li><?php echo $lover; ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</aside><?php endif;
+			if($superhero->sidekicks): ?><aside class="sidekicks">
+				<h3>Amis de <?php echo $superhero; ?></h3>
+				<ul>
+					<?php foreach($superhero->sidekicks as $sidekick): ?>
+						<li><?php echo $sidekick; ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</aside><?php endif;
+		?></div>
+	</section>
