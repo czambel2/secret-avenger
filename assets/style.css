@@ -175,3 +175,14 @@ footer a {
 	text-decoration: underline;
 	color: #ccc;
 }
+
+.disclaimer {
+	font-size: 8pt;
+	color: silver;
+	text-align: center;
+	margin: 16px;
+}
+
+.disclaimer a {
+	color: silver;
+}

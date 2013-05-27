@@ -61,3 +61,10 @@ $superhero = $parser->getSuperHeroById($id);
 			</aside><?php endif;
 		?></div>
 	</section>
+
+	<div class="disclaimer">
+		<a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr">Contenu soumis à la licence CC-BY-SA</a>.
+		Source&nbsp;: Article <em><a href="http://fr.wikipedia.org/wiki/<?php echo $superhero->getWikipediaArticleSlug(); ?>"><?php echo $superhero->wikipediaArticleName; ?></a></em>
+		de <a href="http://fr.wikipedia.org/">Wikipédia en français</a>
+		(<a href="http://fr.wikipedia.org/w/index.php?title=<?php echo $superhero->getWikipediaArticleSlug(); ?>&action=history">auteurs</a>)
+	</div>

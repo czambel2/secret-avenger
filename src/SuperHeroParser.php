@@ -143,6 +143,7 @@ class SuperHeroParser
 		$superHero = new SuperHero();
 
 		$superHero->id = $node->getAttribute('id');
+		$superHero->wikipediaArticleName = $node->getAttribute('wikipediaArticleName');
 
 		// Récupération des données statiques
 		foreach (array(

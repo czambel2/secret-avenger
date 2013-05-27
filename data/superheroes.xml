@@ -2,7 +2,7 @@
 
 <!DOCTYPE superheroes SYSTEM "superheroes.dtd">
 <superheroes>
-	<superhero id="1">
+	<superhero id="1" wikipediaArticleName="Iron Man (comics)">
 		<nickname>Iron Man</nickname>
 		<firstName>Tony</firstName>
 		<lastName>Stark</lastName>
@@ -37,7 +37,7 @@
 		</sidekicks>
 	</superhero>
 
-	<superhero id="2">
+	<superhero id="2" wikipediaArticleName="Veuve noire (comics)">
 		<nickname>Black widow</nickname>
 		<firstName>Natasha</firstName>
 		<lastName>Romanova</lastName>
@@ -66,7 +66,7 @@
 		<sidekicks/>
 	</superhero>
 
-	<superhero id="3">
+	<superhero id="3" wikipediaArticleName="Hulk">
 		<nickname>Hulk</nickname>
 		<firstName>Robert</firstName>
 		<lastName>Banner</lastName>
@@ -96,7 +96,7 @@
 		<sidekicks/>
 	</superhero>
 
-	<superhero id="4">
+	<superhero id="4" wikipediaArticleName="Thor (Marvel Comics)">
 		<nickname>Thor</nickname>
 		<firstName>Thor</firstName>
 		<lastName>Odinson</lastName>
@@ -131,7 +131,7 @@
 		<sidekicks/>
 	</superhero>
 
-	<superhero id="5">
+	<superhero id="5" wikipediaArticleName="Batman">
 		<nickname>Batman</nickname>
 		<firstName>Bruce</firstName>
 		<lastName>Wayne</lastName>
