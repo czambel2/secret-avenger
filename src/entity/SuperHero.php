@@ -1,16 +1,19 @@
 <?php
 
 /**
- * @property int    $id
- * @property string $nickname
- * @property string $firstName
- * @property string $lastName
- * @property string $universe
- * @property string $picture
- * @property array  $superpowers
- * @property array  $nemeses
- * @property array  $lovers
- * @property array  $sidekicks
+ * Représente un super-héros.
+ *
+ * @property int    $id          L'idenifiant du super-héros.
+ * @property string $nickname    Le pseudonyme du super-héros.
+ * @property string $firstName   Le prénom du super-héros.
+ * @property string $lastName    Le nom de famille du super-héros.
+ * @property string $universe    L'univers d'origine du super-héros.
+ * @property string $description La description du super-héros.
+ * @property string $picture     L'image du super-héros.
+ * @property array  $superpowers Les super-pouvoirs du super-héros.
+ * @property array  $nemeses     Les némésis du super-héros.
+ * @property array  $lovers      Les amants du super-héros.
+ * @property array  $sidekicks   Les amis du super-héros.
  */
 class SuperHero extends SuperThing
 {
@@ -26,6 +29,9 @@ class SuperHero extends SuperThing
 	protected $lovers;
 	protected $sidekicks;
 
+	/**
+	 * Initialise les tableaux du super-héros.
+	 */
 	public function __contruct()
 	{
 		$this->superpowers = array();
@@ -34,11 +40,17 @@ class SuperHero extends SuperThing
 		$this->sidekicks = array();
 	}
 
+	/**
+	 * @return string Le nom réel du super-héros.
+	 */
 	public function getRealName()
 	{
 		return $this->firstName . " " . $this->lastName;
 	}
 
+	/**
+	 * @return string La représentation en chaîne de caractères du super-héros.
+	 */
 	public function __toString()
 	{
 		return $this->nickname ? $this->nickname : $this->firstName . " " . $this->lastName;

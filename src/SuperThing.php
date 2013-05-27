@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Permet d'utiliser la syntaxe $object->property pour récupérer et définir les propriétés d'un objet.
+ */
 class SuperThing
 {
 	/**

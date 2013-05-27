@@ -1,9 +1,11 @@
 <?php
 
 /**
- * @property string $nickname
- * @property string $firstName
- * @property string $lastName
+ * Représente une némésis.
+ *
+ * @property string $nickname  Le pseudonyme de la némésis.
+ * @property string $firstName Le prénom de la némésis.
+ * @property string $lastName  Le nom de famille de la némésis.
  */
 class Nemesis extends SuperThing
 {
@@ -11,6 +13,9 @@ class Nemesis extends SuperThing
 	protected $firstName;
 	protected $lastName;
 
+	/**
+	 * @return string La représentation en chaîne de caractères de la némésis.
+	 */
 	public function __toString()
 	{
 		return $this->nickname ?: $this->firstName . " " . $this->lastName;

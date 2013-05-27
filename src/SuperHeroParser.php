@@ -1,15 +1,26 @@
 <?php
 
+/**
+ * Permet d'analyser le XML des super-héros.
+ */
 class SuperHeroParser
 {
 	/**
-	 * @var DOMDocument
+	 * @var DOMDocument Le document XML.
 	 */
 	protected $xml;
 
+	/**
+	 * @var array Le tableau des super-héros.
+	 */
 	protected $characters;
 
-	function __construct($filename = null)
+	/**
+	 * Initialise l'analyseur XML.
+	 * @param  string           $filename Le chemin du fichier XML à analyser.
+	 * @throws AvengerException           Si le fichier n'est pas accessible ou correctement construit.
+	 */
+	public function __construct($filename = null)
 	{
 		if (!$filename) {
 			$filename = "data/superheroes.xml";
@@ -25,11 +36,22 @@ class SuperHeroParser
 		$this->parse();
 	}
 
+	/**
+	 * Récupère une propriété "simple" (sans sous-propriétés) d'un super-héros.
+	 * @param  DOMElement $superHeroNode Le noeud du super-héros.
+	 * @param  string     $property      Le nom de la propriété à récupérer.
+	 * @return string                    Le contenu de la propriété.
+	 */
 	protected function getNodeProperty(DOMElement $superHeroNode, $property)
 	{
 		return $superHeroNode->getElementsByTagName($property)->item(0)->nodeValue;
 	}
 
+	/**
+	 * Analyse les super-pouvoirs d'un super-héros.
+	 * @param  DOMElement $superHeroNode Le noeud du super-héros.
+	 * @return array                     La liste des pouvoirs du super-héros.
+	 */
 	protected function parseSuperpowers(DOMElement $superHeroNode)
 	{
 		$superpowersNode = $superHeroNode->getElementsByTagName('superpowers')->item(0);
@@ -45,6 +67,11 @@ class SuperHeroParser
 		return $superpowers;
 	}
 
+	/**
+	 * Analyse les némésis d'un super-héros.
+	 * @param  DOMElement $superHeroNode Le noeud du super-héros.
+	 * @return array                     La liste des némésis du super-héros.
+	 */
 	protected function parseNemeses(DOMElement $superHeroNode)
 	{
 		$nemesesNode = $superHeroNode->getElementsByTagName('nemeses')->item(0);
@@ -62,6 +89,11 @@ class SuperHeroParser
 		return $nemeses;
 	}
 
+	/**
+	 * Analyse les amants d'un super-héros.
+	 * @param  DOMElement $superHeroNode Le noeud du super-héros.
+	 * @return array                     La liste des amants du super-héros.
+	 */
 	protected function parseLovers(DOMElement $superHeroNode)
 	{
 		$loversNode = $superHeroNode->getElementsByTagName('lovers')->item(0);
@@ -79,6 +111,11 @@ class SuperHeroParser
 		return $lovers;
 	}
 
+	/**
+	 * Analyse les amis d'un super-héros.
+	 * @param  DOMElement $superHeroNode Le noeud du super-héros.
+	 * @return array                     La liste des amis du super-héros.
+	 */
 	protected function parseSidekicks(DOMElement $superHeroNode)
 	{
 		$sidekicksNode = $superHeroNode->getElementsByTagName('sidekicks')->item(0);
@@ -96,6 +133,11 @@ class SuperHeroParser
 		return $sidekicks;
 	}
 
+	/**
+	 * Analse un super-héros.
+	 * @param  DOMElement $node Le noeud du super-héros.
+	 * @return SuperHero        Le super-héros.
+	 */
 	protected function parseSuperHero(DOMElement $node)
 	{
 		$superHero = new SuperHero();
@@ -154,9 +196,9 @@ class SuperHeroParser
 
 	/**
 	 * Tente de récupérer un super-héros par son identifiant.
-	 * @param  int       $id       l'identifiant du super-héros à récupérer.
-	 * @return SuperHero           le super-héros récupéré.
-	 * @throws Avenger404Exception si aucun super-héros correspondant n'est trouvé.
+	 * @param  int       $id       L'identifiant du super-héros à récupérer.
+	 * @return SuperHero           Le super-héros récupéré.
+	 * @throws Avenger404Exception Si aucun super-héros correspondant n'est trouvé.
 	 */
 	public function getSuperHeroById($id)
 	{
@@ -167,6 +209,10 @@ class SuperHeroParser
 		}
 	}
 
+	/**
+	 * Récupère tous les super-héros.
+	 * @return array Le tableau contenant tous les super-héros.
+	 */
 	public function getAll()
 	{
 		return $this->characters;

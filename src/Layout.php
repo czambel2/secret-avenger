@@ -1,21 +1,45 @@
 <?php
 
+/**
+ * Représente le modèle de page.
+ */
 class Layout
 {
+	/**
+	 * @var string Le titre de la page. (balise <title />)
+	 */
 	protected $title;
+
+	/**
+	 * @var Layout L'instance de Layout (singleton).
+	 */
 	protected static $instance;
 
+	/**
+	 * Construit un nouvel objet Layout.
+	 *
+	 * Le constructeur ne doit être appelé qu'en interne. Sinon, il faut utiliser Layout::getInstance() pour récupérer
+	 *  l'instance singleton.
+	 *
+	 * @param string $title Le titre de la page.
+	 */
 	protected function __construct($title = null)
 	{
 		$this->title = $title;
 		ob_start();
 	}
 
+	/**
+	 * @param string $title Le titre de la page.
+	 */
 	public function setTitle($title = null)
 	{
 		$this->title = $title;
 	}
 
+	/**
+	 * @return Layout L'instance actuelle de Layout.
+	 */
 	public static function getInstance()
 	{
 		if (!self::$instance) {
@@ -25,7 +49,9 @@ class Layout
 		return self::$instance;
 	}
 
-
+	/**
+	 * Affiche à l'écran le contenu du tampon.
+	 */
 	public function __destruct()
 	{
 		$contents = ob_get_clean();
