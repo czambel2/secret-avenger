@@ -12,7 +12,7 @@ switch ($page) {
 		require_once('src/page/' . $page . '.php');
 		exit;
 		break;
-	case 'universes':
+	case 'universe':
 		require_once('src/page/' . $page . '.php');
 		exit;
 		break;

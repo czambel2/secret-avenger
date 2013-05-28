@@ -225,4 +225,22 @@ class SuperHeroParser
 	{
 		return $this->characters;
 	}
+
+	/**
+	 * Récupère tous les super-héros d'un univers donné.
+	 * @param  string $universe L'univers.
+	 * @return array            Le tableau contenant tous les super-héros de l'univers donné.
+	 */
+	public function retrieveByUniverse($universe)
+	{
+		$characters = array();
+		foreach($this->getAll() as $character)
+		{
+			if($character->universe == $universe)
+			{
+				$characters[] = $character;
+			}
+		}
+		return $characters;
+	}
 }
