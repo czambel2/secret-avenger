@@ -4,16 +4,29 @@
 	box-sizing: border-box;
 }
 
-body {
-	font-family: Ubuntu, sans-serif;
-	background-color: #0b61a4;
+header a, footer, nav ul li a, .super-hero-list li a, section.main {
+	background-color: #2fb335;
 	color: #fff;
+	border: 8px #057c1c solid;
+}
+
+.thumbnail img, .super-hero-list li img {
+
+	border: 1px #2fb335 solid;
+	outline: 1px #057c1c solid;
+}
+
+body {
+	background-color: #056;
+
+	font-family: Ubuntu, sans-serif;
+	color: #daa520;
 	max-width: 960px;
-	margin: 0 auto;
+	margin: 16px auto;
 }
 
 header {
-	margin: 16px auto 0 auto;
+	margin: 0 auto;
 	text-align: center;
 	padding: 0;
 	display: block;
@@ -23,10 +36,7 @@ header a {
 	overflow: auto;
 	display: block;
 	text-decoration: none;
-	color: #fff;
 	padding: 8px;
-	background-color: #ff6060;
-	border: 8px red solid;
 	border-radius: 16px;
 }
 
@@ -59,11 +69,7 @@ nav ul li a {
 	margin: 0;
 	padding: 8px 16px;
 	text-decoration: none;
-	color: #fff;
-	background-color: #ff6060;
-	border-right: 8px red solid;
-	border-left: 8px red solid;
-	border-bottom: 8px red solid;
+	border-top: none;
 	border-bottom-right-radius: 8px;
 	border-bottom-left-radius: 8px;
 }
@@ -85,25 +91,19 @@ nav ul li a {
 	margin: 0;
 	padding: 8px;
 	width: 464px;
-	border: 4px #ff6060 solid;
 	border-radius: 4px;
-	background-color: #ffa8a8;
+	border-width: 4px;
 	text-align: center;
-	color: #ff6060;
 	text-decoration: none;
 }
 
 .super-hero-list li img {
 	margin: 8px auto;
 	display: block;
-	border: 1px #ffa8a8 solid;
-	outline: 1px #ff6060 solid;
 	border-radius: 3px;
 }
 
 section.main {
-	background-color: #ff6060;
-	border: 8px red solid;
 	padding: 8px;
 	margin: 16px 0;
 	border-radius: 16px;
@@ -113,12 +113,6 @@ section.main {
 {
 	float: left;
 	margin: 16px;
-}
-
-.thumbnail img {
-
-	border: 2px #ffa8a8 solid;
-	outline: 2px #ff6060 solid;
 }
 
 aside.identity-card:after
@@ -153,19 +147,11 @@ aside.identity-card p {
 	padding: 0;
 }
 
-.characteristics aside ul li {
-	/*display: inline-block;*/
-}
-
 footer {
-	border: 8px #f00 solid;
-	background-color: #ff6060;
-	/*width: 960px;*/
 	border-radius: 16px;
 	margin: 0 auto;
 	padding: 8px;
 	font-size: 10pt;
-	color: #ccc;
 	text-align: center;
 }
 
