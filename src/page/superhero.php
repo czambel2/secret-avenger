@@ -12,7 +12,9 @@ $superhero = $parser->getSuperHeroById($id);
 ?>
 
 	<section class="main">
-		<img class="thumbnail" src="assets/<?php echo $superhero->picture; ?>" alt="<?php echo $superhero->nickname; ?>" />
+		<div class="thumbnail">
+			<img src="assets/<?php echo $superhero->picture; ?>" alt="<?php echo $superhero->nickname; ?>" />
+		</div>
 		<aside class="identity-card">
 			<h2>
 				<?php echo $superhero->nickname; ?>

@@ -33,6 +33,13 @@ class SuperHeroParser
 				$filename);
 		}
 
+		if (!$this->xml->validate())
+		{
+			throw new AvengerException("Impossible de valider le fichier " .
+				$filename . " par rapport à la DTD. Assurez-vous que le fichier " .
+				" soit valide.");
+		}
+
 		$this->parse();
 	}
 

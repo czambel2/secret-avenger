@@ -8,12 +8,11 @@ body {
 	font-family: Ubuntu, sans-serif;
 	background-color: #0b61a4;
 	color: #fff;
-	width: 960px;
+	max-width: 960px;
 	margin: 0 auto;
 }
 
 header {
-	width: 960px;
 	margin: 16px auto 0 auto;
 	text-align: center;
 	padding: 0;
@@ -71,7 +70,6 @@ nav ul li a {
 
 .super-hero-list {
 	margin: 8px auto;
-	width: 960px;
 	padding: 0;
 	text-align: center;
 }
@@ -111,10 +109,14 @@ section.main {
 	border-radius: 16px;
 }
 
-img.thumbnail
+.thumbnail
 {
 	float: left;
 	margin: 16px;
+}
+
+.thumbnail img {
+
 	border: 2px #ffa8a8 solid;
 	outline: 2px #ff6060 solid;
 }
@@ -152,13 +154,13 @@ aside.identity-card p {
 }
 
 .characteristics aside ul li {
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 footer {
 	border: 8px #f00 solid;
 	background-color: #ff6060;
-	width: 960px;
+	/*width: 960px;*/
 	border-radius: 16px;
 	margin: 0 auto;
 	padding: 8px;
@@ -185,4 +187,37 @@ footer a {
 
 .disclaimer a {
 	color: silver;
+}
+
+/* responsive design */
+@media screen and (max-width: 768px) {
+	body {
+		width: auto;
+	}
+
+	.super-hero-list li {
+		display: block;
+	}
+
+	.super-hero-list li a {
+		display: block;
+		width: auto;
+	}
+
+	.thumbnail {
+		float: none;
+		text-align: center;
+		margin: 16px auto 0;
+	}
+
+	.characteristics aside {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.characteristics aside {
+		display: block;
+		width: auto;
+	}
 }

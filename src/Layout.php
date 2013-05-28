@@ -63,13 +63,14 @@ class Layout
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
 		<title>{$title}</title>
 		<link rel="stylesheet" type="text/css" href="assets/style.css" />
 	</head>
 	<body>
 		<header>
 			<a href="." title="Accéder à la page d'accueil">
-				<h1>SecretAvenger</h1>
+				<h1>Secret Avenger</h1>
 				<p>La base internationale des super-héros</p>
 			</a>
 		</header>
