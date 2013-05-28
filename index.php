@@ -12,6 +12,10 @@ switch ($page) {
 		require_once('src/page/' . $page . '.php');
 		exit;
 		break;
+	case 'universes':
+		require_once('src/page/' . $page . '.php');
+		exit;
+		break;
 	default:
 		//404
 }
