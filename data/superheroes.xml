@@ -161,13 +161,141 @@
 		</nemeses>
 
 		<lovers>
-			<lover firstName="Harleen" lastName="Quinzel">Harley Quinn</lover>
+			<lover firstName="Selina" lastName="Kyle">Catwoman</lover>
+			<lover firstName="Rachel" lastName="Dawes" />
 		</lovers>
 
 		<sidekicks>
 			<sidekick firstName="Jason" lastName="Todd">Robin</sidekick>
 			<sidekick firstName="Alfred" lastName="Pennyworth">Alfred</sidekick>
+			<sidekick firstName="Barbara" lastName="Gordon">Bat Girl</sidekick>
 		</sidekicks>
+	</superhero>
+
+	<superhero id="6" wikipediaArticleName="Spider-Man">
+		<nickname>Spider-Man</nickname>
+		<firstName>Peter</firstName>
+		<lastName>Parker</lastName>
+
+		<universe>Marvel</universe>
+
+		<description>
+			<![CDATA[
+				Spider-Man (L’Homme araignée) est un personnage de fiction, super-héros appartenant à l'univers 
+				de Marvel Comics. Créé par le scénariste Stan Lee et le dessinateur Steve Ditko, il apparaît pour 
+				la première fois dans le comic book Amazing Fantasy #15 en 1962. Le succès de ce numéro permet à 
+				Spider-Man d'avoir dès 1963 sa propre série The Amazing Spider-Man. Spider-Man est l'un des 
+				personnages les plus populaires de l'univers des comics. Au fil des ans, d'autres périodiques 
+				lui seront consacrés tel Spectacular Spider-Man et Peter Parker, the Spider-Man, mais 
+				The Amazing Spider-Man est toujours le magazine principal du héros. Peter Parker meurt dans 
+				le numéro 700 de The Amazing Spider-Man mais un nouveau Spider-Man reprend le flambeau lorsque 
+				l'esprit du Docteur Octopus occupe le corps de Parker.
+			]]>
+		</description>
+
+		<picture>spider-man.png</picture>
+
+		<superpowers>
+			<superpower>Force, réflexes, rapidité et agilité surhaumaine</superpower>
+			<superpower>Tire des toiles d'araignées avec ses mains</superpower>
+			<superpower>Peut s'accrocher à toutes les surfaces</superpower>
+		</superpowers>
+
+		<nemeses>
+			<nemesis firstName="Dr. Otto Gunther" lastName="Octavius">Docteur Octopus</nemesis>
+			<nemesis firstNam="" lastName="">Venom</nemesis>
+		</nemeses>
+
+		<lovers>
+			<lover firstName="Gwen" lastName="Stacy" />
+			<lover firstName="Mary-Jane" lastName="Watson" />
+		</lovers>
+
+		<sidekicks />
+	</superhero>
+
+	<superhero id="7" wikipediaArticleName="Superman">
+		<nickname>Superman</nickname>
+		<firstName>Clark</firstName>
+		<lastName>Kent</lastName>
+
+		<universe>DC</universe>
+
+		<description>
+			<![CDATA[
+				Superman est un super-héros de bande dessinée américain appartenant à l’Univers DC. Ce personnage 
+				de fiction est considéré comme une icône culturelle américaine.
+				Créé en 1932 par l’écrivain américain Jerry Siegel et l’artiste canadien Joe Shuster tandis qu’ils 
+				habitaient tous deux à Cleveland, le personnage fut vendu à Detective Comics. Il apparaît pour la 
+				première fois dans un Action Comics en juin 1938. Le personnage est ensuite repris dans plusieurs 
+				pièces radiophoniques, émissions de télévision, films, comic strips et jeux vidéo. Au vu du succès 
+				et de la notoriété de ses aventures, Superman est essentiel dans la création d’un genre propre 
+				aux super-héros.
+				L’apparence du personnage est particulièrement iconique : un costume composé d’un justaucorps rouge,
+				bleu et jaune, de collants et de bottes moulantes, d’une ceinture, avec une cape et sur le torse, 
+				le dessin d’un ‘S’ rouge sur un écu jaune1,5,6. Cet écu est maintenant très souvent utilisé 
+				pour symboliser le personnage.
+			]]>
+		</description>
+
+		<picture>superman.png</picture>
+
+		<superpowers>
+			<superpower>Vol</superpower>
+			<superpower>Invulnérabilité</superpower>
+			<superpower>Super force, super souffle</superpower>
+			<superpower>Endurance, rapidité</superpower>
+			<superpower>Vision aux rayon X</superpower>
+		</superpowers>
+
+		<nemeses>
+			<nemesis firstNam="Lex" lastName="Luthor" />
+		</nemeses>
+
+		<lovers>
+			<lover firstName="Lana" lastName="Lang" />
+			<lover firstName="Lois" lastName="Lane" />
+		</lovers>
+
+		<sidekicks />
+	</superhero>
+
+	<superhero id="8" wikipediaArticleName="Wonder_Woman">
+		<nickname>Wonder Woman</nickname>
+		<firstName>Diana</firstName>
+		<lastName>Prince</lastName>
+
+		<universe>DC</universe>
+
+		<description>
+			<![CDATA[
+				Wonder Woman est une super-héroïne de bande dessinée américaine créée par William Moulton Marston
+				(sous le pseudonyme de Charles Moulton) en décembre 1941 dans All Star Comics. Elle était à 
+				l'époque l'une des premières super-héroïnes et elle est certainement encore aujourd'hui 
+				la plus célèbre d'entre elles.
+				Dans la plupart des adaptations, Wonder Woman est la princesse Diana d'une tribu d'amazones dont 
+				les origines sont liées à la mythologie grecque. Ambassadrice amazone dans notre monde, elle possède 
+				différents pouvoirs surnaturels ainsi que des cadeaux des dieux grecs, comme un lasso magique et 
+				des bracelets à l'épreuve des balles. Elle fait aussi partie de la Ligue de justice d'Amérique.
+				Marston a voulu faire de Wonder Woman un personnage féministe et la plupart des scénaristes qui 
+				ont repris le personnage, particulièrement ceux des années 1980 et suivantes, l'ont représentée ainsi.
+			]]>
+		</description>
+
+		<picture>wonderwoman.png</picture>
+
+		<superpowers>
+			<superpower>Vol</superpower>
+			<superpower>Super force, super vitesse</superpower>
+			<superpower>Régénartion</superpower>
+			<superpower>Lasso magique</superpower>
+		</superpowers>
+
+		<nemeses />
+
+		<lovers />
+		
+		<sidekicks />
 	</superhero>
 </superheroes>
 
