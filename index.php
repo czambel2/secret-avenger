@@ -2,20 +2,20 @@
 
 require_once 'src/autoload.php';
 
-Layout::getInstance();
+$parser = new SuperHeroParser();
+
+// Affectation du parser dans le layout, ce qui permet d'afficher la liste des univers possibles
+Layout::getInstance()->setParser($parser);
 
 $page = array_key_exists('page', $_GET) ? $_GET['page'] : 'home';
 
 switch ($page) {
-	case 'home':
-	case 'superhero':
+	case 'home':      // Page d'accueil
+	case 'superhero': // Page dédiée à un super-héros
+	case 'universe':  // Page listant tous les super-héros d'un univers
 		require_once('src/page/' . $page . '.php');
-		exit;
 		break;
-	case 'universe':
-		require_once('src/page/' . $page . '.php');
-		exit;
+	default:          // Page de message d'erreur
+		require_once('src/page/not-found-404.php');
 		break;
-	default:
-		//404
 }

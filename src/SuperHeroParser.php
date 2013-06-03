@@ -255,7 +255,7 @@ class SuperHeroParser
 		{
 			if(!in_array($character->universe, $universes))
 			{
-				$universes[] = $universe;
+				$universes[] = $character->universe;
 			}
 		}
 		return $universes;

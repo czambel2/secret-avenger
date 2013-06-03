@@ -18,3 +18,6 @@ function autoload($className)
 }
 
 spl_autoload_register('autoload');
+
+// Forcer le chargement de la classe SecretAvenger (elle est nécessaire pour le destructeur de Layout)
+autoload('SecretAvenger');

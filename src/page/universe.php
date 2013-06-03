@@ -1,8 +1,6 @@
 <?php
 
 // On récupère la liste de tous les super-héros d'un univers
-$parser = new SuperHeroParser();
-
 $universe = urldecode($_GET['u']);
 $heroes = $parser->retrieveByUniverse($universe);
 ?>
@@ -11,7 +9,7 @@ $heroes = $parser->retrieveByUniverse($universe);
 	<?php if($heroes): ?>
 		<?php foreach ($heroes as $hero): ?>
 			<li>
-				<a href="<?php echo SecretAvenger::url('superhero', array('id' => $hero->id)); ?>" title="Accéder à la page descriptive de <?php echo $hero; ?>">
+				<a href="<?php echo SecretAvenger::__(SecretAvenger::url('superhero', array('id' => $hero->id))); ?>" title="Accéder à la page descriptive de <?php echo $hero; ?>">
 					<img src="assets/<?php echo $hero->picture; ?>" alt="<?php $hero->nickname; ?>" />
 					<h2><?php echo $hero->nickname; ?></h2>
 				</a>

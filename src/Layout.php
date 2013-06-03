@@ -16,6 +16,11 @@ class Layout
 	protected static $instance;
 
 	/**
+	 * @var SuperHeroParser Le parser de super-héros. Utilisé pour afficher la liste des univers dans le menu.
+	 */
+	protected $parser;
+
+	/**
 	 * Construit un nouvel objet Layout.
 	 *
 	 * Le constructeur ne doit être appelé qu'en interne. Sinon, il faut utiliser Layout::getInstance() pour récupérer
@@ -27,6 +32,14 @@ class Layout
 	{
 		$this->title = $title;
 		ob_start();
+	}
+
+	/**
+	 * @param SuperHeroParser $parser Le parser de super-héros.
+	 */
+	public function setParser($parser)
+	{
+		$this->parser = $parser;
 	}
 
 	/**
@@ -58,12 +71,24 @@ class Layout
 
 		$title = $this->title ? $this->title . ' - SecretAvenger' : 'SecretAvenger : la base des super-héros';
 
+		$universes = '';
+		foreach($this->parser->retrieveUniverseList() as $universe)
+		{
+			$url = SecretAvenger::__(SecretAvenger::url('universe', array('u' => $universe)));
+			$universe = SecretAvenger::__($universe);
+
+			$universes .= <<<EOF
+				<li><a href="{$url}" title="Accéder à la liste de tous les super-héros de {$universe}">{$universe}</a></li>
+
+EOF;
+		}
+
 		echo <<<EOF
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width"/>
 		<title>{$title}</title>
 		<link rel="stylesheet" type="text/css" href="assets/style.css" />
 	</head>
@@ -74,12 +99,13 @@ class Layout
 				<p>La base internationale des super-héros</p>
 			</a>
 		</header>
-		<!-- <nav>
+		<nav>
 			<ul>
-				<li><a href="." title="Accéder à la page d'accueil">Accueil</a></li>
+				<li><a href="." title="Accéder à la page d'accueil">Tous les super-héros</a></li>
+{$universes}
 			</ul>
-		</nav> -->
-		{$contents}
+		</nav>
+{$contents}
 		<footer>
 			<p>
 				Secret-Avenger est un projet universitaire de l'<a href="http://www.utbm.fr/"

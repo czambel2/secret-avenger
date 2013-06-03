@@ -6,7 +6,6 @@ if(!array_key_exists('id', $_GET) or !is_numeric($id = $_GET['id']))
 	throw new Avenger404Exception("Le super-héros n'a pas été fourni en paramètre.");
 }
 
-$parser = new SuperHeroParser();
 $superhero = $parser->getSuperHeroById($id);
 
 ?>
