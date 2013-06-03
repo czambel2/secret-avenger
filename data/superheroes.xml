@@ -203,7 +203,7 @@
 
 		<nemeses>
 			<nemesis firstName="Dr. Otto Gunther" lastName="Octavius">Docteur Octopus</nemesis>
-			<nemesis firstNam="" lastName="">Venom</nemesis>
+			<nemesis firstName="" lastName="">Venom</nemesis>
 		</nemeses>
 
 		<lovers>
@@ -249,7 +249,7 @@
 		</superpowers>
 
 		<nemeses>
-			<nemesis firstNam="Lex" lastName="Luthor" />
+			<nemesis firstName="Lex" lastName="Luthor" />
 		</nemeses>
 
 		<lovers>
