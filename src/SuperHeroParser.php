@@ -243,4 +243,21 @@ class SuperHeroParser
 		}
 		return $characters;
 	}
+
+	/**
+	 * Récupère la liste de tous les univers possibles.
+	 * @return array La liste de tous les univers possibles.
+	 */
+	public function retrieveUniverseList()
+	{
+		$universes = array();
+		foreach($this->getAll() as $character)
+		{
+			if(!in_array($character->universe, $universes))
+			{
+				$universes[] = $universe;
+			}
+		}
+		return $universes;
+	}
 }
