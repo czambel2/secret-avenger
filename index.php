@@ -28,3 +28,8 @@ elseif(preg_match('#^/universe/([a-z0-9-]+)\.html$#', $queryString, $matches))
 	$universeSlug = $matches[1];
 	require_once('src/page/universe.php');
 }
+else
+{
+	header("HTTP/1.0 404 Not Found");
+	require_once('src/page/not-found-404.php');
+}

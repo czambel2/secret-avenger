@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-header a, footer, nav ul li a, .super-hero-list li a, section.main {
+header a, footer, nav ul li a, .super-hero-list li a, section.main, .something-horrible {
 	background-color: #2fb335;
 	color: #fff;
 	border: 8px #057c1c solid;
@@ -177,7 +177,7 @@ footer p {
 	margin: 4px;
 }
 
-footer a {
+a {
 	text-decoration: underline;
 	color: #ccc;
 }
@@ -191,6 +191,12 @@ footer a {
 
 .disclaimer a {
 	color: silver;
+}
+
+.something-horrible {
+	padding: 8px;
+	text-align: center;
+	border-radius: 16px;
 }
 
 /* responsive design */

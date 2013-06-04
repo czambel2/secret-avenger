@@ -1,10 +1,20 @@
 <?php
 
 /**
- * Représente le modèle de page.
+ * Représente le design de page.
  */
 class Layout
 {
+	/**
+	 * Le design étendu, avec le menu, le header et le footer.
+	 */
+	const EXTENDED_LAYOUT = 0;
+
+	/**
+	 * Le design minimaliste, avec uniquement l'élément body.
+	 */
+	const TINY_LAYOUT = 1;
+
 	/**
 	 * @var string Le titre de la page. (balise <title />)
 	 */
@@ -31,7 +41,16 @@ class Layout
 	protected function __construct($title = null)
 	{
 		$this->title = $title;
+		$this->layout = self::EXTENDED_LAYOUT;
 		ob_start();
+	}
+
+	/**
+	 * @param $layout
+	 */
+	public function setLayout($layout)
+	{
+		$this->layout = $layout;
 	}
 
 	/**
@@ -63,12 +82,12 @@ class Layout
 	}
 
 	/**
-	 * Affiche à l'écran le contenu du tampon.
+	 * Récupère le design étendu.
+	 * @param  string $contents Le contenu à afficher dans la page.
+	 * @return string           Le code HTML à afficher.
 	 */
-	public function __destruct()
+	protected function getExtendedLayout($contents)
 	{
-		$contents = ob_get_clean();
-
 		$title = $this->title ? $this->title . ' - SecretAvenger' : 'SecretAvenger : la base des super-héros';
 
 		$universes = '';
@@ -86,7 +105,7 @@ EOF;
 		$base = $_SERVER['SECRET_AVENGER_PATH'];
 		$homepageUrl = SecretAvenger::url('home');
 
-		echo <<<EOF
+		return <<<EOF
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -122,5 +141,49 @@ EOF;
 	</body>
 </html>
 EOF;
+	}
+
+	/**
+	 * Récupère le design minimaliste.
+	 * @param  string $contents Le contenu à afficher dans la page.
+	 * @return string           Le code HTML à afficher.
+	 */
+	protected function getTinyLayout($contents)
+	{
+		$title = $this->title ? $this->title . ' - SecretAvenger' : 'SecretAvenger : la base des super-héros';
+
+		$base = $_SERVER['SECRET_AVENGER_PATH'];
+
+		return <<<EOF
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width"/>
+		<title>{$title}</title>
+		<link rel="stylesheet" type="text/css" href="{$base}/assets/style.css" />
+	</head>
+	<body>
+{$contents}
+	</body>
+</html>
+EOF;
+	}
+
+	/**
+	 * Affiche à l'écran le contenu du tampon.
+	 */
+	public function __destruct()
+	{
+		$contents = ob_get_clean();
+
+		if($this->layout == self::EXTENDED_LAYOUT)
+		{
+			echo $this->getExtendedLayout($contents);
+		}
+		else
+		{
+			echo $this->getTinyLayout($contents);
+		}
 	}
 }
