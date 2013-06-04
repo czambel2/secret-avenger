@@ -7,15 +7,24 @@ $parser = new SuperHeroParser();
 // Affectation du parser dans le layout, ce qui permet d'afficher la liste des univers possibles
 Layout::getInstance()->setParser($parser);
 
-$page = array_key_exists('page', $_GET) ? $_GET['page'] : 'home';
+// On récupère l'URL demandée par l'utilisateur
+$queryString = $_SERVER['REQUEST_URI'];
+$base = $_SERVER['SECRET_AVENGER_PATH'];
 
-switch ($page) {
-	case 'home':      // Page d'accueil
-	case 'superhero': // Page dédiée à un super-héros
-	case 'universe':  // Page listant tous les super-héros d'un univers
-		require_once('src/page/' . $page . '.php');
-		break;
-	default:          // Page de message d'erreur
-		require_once('src/page/not-found-404.php');
-		break;
+// On enlève de l'URL l'éventuel préfixe du chemin
+$queryString = str_replace($base, '', $queryString);
+
+if(preg_match('#^/$#', $queryString))
+{
+	require_once('src/page/home.php');
+}
+elseif(preg_match('#^/([a-z0-9-]+)\.html$#', $queryString, $matches))
+{
+	$superHeroSlug = $matches[1];
+	require_once('src/page/superhero.php');
+}
+elseif(preg_match('#^/universe/([a-z0-9-]+)\.html$#', $queryString, $matches))
+{
+	$universeSlug = $matches[1];
+	require_once('src/page/universe.php');
 }

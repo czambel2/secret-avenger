@@ -5,10 +5,12 @@
  *
  * @property int    $id                   L'idenifiant du super-héros.
  * @property string $wikipediaArticleName Le nom de l'article Wikipédia correspondant.
+ * @property string $slug                 Le nom interne du super-héros.
  * @property string $nickname             Le pseudonyme du super-héros.
  * @property string $firstName            Le prénom du super-héros.
  * @property string $lastName             Le nom de famille du super-héros.
  * @property string $universe             L'univers d'origine du super-héros.
+ * @property string $universeSlug         Le nom interne de l'univers.
  * @property string $description          La description du super-héros.
  * @property string $picture              L'image du super-héros.
  * @property array  $superpowers          Les super-pouvoirs du super-héros.
@@ -20,10 +22,12 @@ class SuperHero extends SuperThing
 {
 	protected $id;
 	protected $wikipediaArticleName;
+	protected $slug;
 	protected $nickname;
 	protected $firstName;
 	protected $lastName;
 	protected $universe;
+	protected $universeSlug;
 	protected $description;
 	protected $picture;
 	protected $superpowers;

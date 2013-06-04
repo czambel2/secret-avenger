@@ -4,11 +4,13 @@
 		<!ELEMENT superhero (nickname,firstName,lastName,universe,description,picture,superpowers,nemeses,lovers,sidekicks) >
 		<!ATTLIST superhero id CDATA #REQUIRED>
 		<!ATTLIST superhero wikipediaArticleName CDATA #IMPLIED>
+		<!ATTLIST superhero slug CDATA #IMPLIED>
 
 		<!ELEMENT nickname (#PCDATA)>
 		<!ELEMENT firstName (#PCDATA)>
 		<!ELEMENT lastName (#PCDATA)>
 		<!ELEMENT universe (#PCDATA)>
+		<!ATTLIST universe slug CDATA #IMPLIED>
 		<!ELEMENT description (#PCDATA)>
 		<!ELEMENT picture (#PCDATA)>
 

@@ -151,6 +151,7 @@ class SuperHeroParser
 
 		$superHero->id = $node->getAttribute('id');
 		$superHero->wikipediaArticleName = $node->getAttribute('wikipediaArticleName');
+		$superHero->slug = $node->getAttribute('slug');
 
 		// Récupération des données statiques
 		foreach (array(
@@ -163,6 +164,8 @@ class SuperHeroParser
 		         ) as $property) {
 			$superHero->$property = $this->getNodeProperty($node, $property);
 		}
+
+		$superHero->universeSlug = $node->getElementsByTagName('universe')->item(0)->getAttribute('slug');
 
 		// Récupération des données objet
 		$superHero->superpowers = $this->parseSuperpowers($node);
@@ -210,11 +213,33 @@ class SuperHeroParser
 	 */
 	public function getSuperHeroById($id)
 	{
-		if (array_key_exists($id, $this->characters)) {
+		if (array_key_exists($id, $this->characters))
+		{
 			return $this->characters[$id];
-		} else {
+		}
+		else
+		{
 			throw new Avenger404Exception("Impossible de charger le héros numéro $id.");
 		}
+	}
+
+	/**
+	 * Tente de récupérer un super-héros par son nom interne.
+	 * @param  string    $slug     Le nom interne du super-héros à récupérer.
+	 * @return SuperHero           Le super-héros récupéré.
+	 * @throws Avenger404Exception Si aucun super-héros correspondant n'est trouvé.
+	 */
+	public function getSuperHeroBySlug($slug)
+	{
+		foreach($this->characters as $character)
+		{
+			if($character->slug == $slug)
+			{
+				return $character;
+			}
+		}
+
+		throw new Avenger404Exception("Impossible de charger le héros de slug $slug.");
 	}
 
 	/**
@@ -245,17 +270,39 @@ class SuperHeroParser
 	}
 
 	/**
+	 * Récupère tous les super-héros d'un univers donné.
+	 * @param  string $universeSlug Le nom interne de l'univers.
+	 * @return array                Le tableau contenant tous les super-héros de l'univers donné.
+	 */
+	public function retrieveByUniverseSlug($universeSlug)
+	{
+		$characters = array();
+		foreach($this->getAll() as $character)
+		{
+			if($character->universeSlug == $universeSlug)
+			{
+				$characters[] = $character;
+			}
+		}
+		return $characters;
+	}
+
+	/**
 	 * Récupère la liste de tous les univers possibles.
 	 * @return array La liste de tous les univers possibles.
+	 *
+	 * Cette fonction retourne un tableau de tableaux. Chaque sous-tableau contient un élément `name' contenant
+	 *  le nom de l'univers (e.g. Marvel) et un élément `slug' contenant le nom interne de l'unviers (e.g. marvel).
 	 */
 	public function retrieveUniverseList()
 	{
 		$universes = array();
 		foreach($this->getAll() as $character)
 		{
-			if(!in_array($character->universe, $universes))
+			$universe = array('name' => $character->universe, 'slug' => $character->universeSlug);
+			if(!in_array($universe, $universes))
 			{
-				$universes[] = $character->universe;
+				$universes[] = $universe;
 			}
 		}
 		return $universes;

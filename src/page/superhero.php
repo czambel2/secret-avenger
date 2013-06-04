@@ -1,18 +1,12 @@
 <?php
 
-// On vérifie que l'identifiant a bien été fourni en paramètre
-if(!array_key_exists('id', $_GET) or !is_numeric($id = $_GET['id']))
-{
-	throw new Avenger404Exception("Le super-héros n'a pas été fourni en paramètre.");
-}
-
-$superhero = $parser->getSuperHeroById($id);
+$superhero = $parser->getSuperHeroBySlug($superHeroSlug);
 
 ?>
 
 	<section class="main">
 		<div class="thumbnail">
-			<img src="assets/<?php echo $superhero->picture; ?>" alt="<?php echo $superhero->nickname; ?>" />
+			<img src="<?php echo $base; ?>/assets/<?php echo $superhero->picture; ?>" alt="<?php echo $superhero->nickname; ?>" />
 		</div>
 		<aside class="identity-card">
 			<h2>

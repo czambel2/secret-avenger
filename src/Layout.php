@@ -74,14 +74,17 @@ class Layout
 		$universes = '';
 		foreach($this->parser->retrieveUniverseList() as $universe)
 		{
-			$url = SecretAvenger::__(SecretAvenger::url('universe', array('u' => $universe)));
-			$universe = SecretAvenger::__($universe);
+			$url = SecretAvenger::__(SecretAvenger::url('universe', array('slug' => $universe['slug'])));
+			$universe = SecretAvenger::__($universe['name']);
 
 			$universes .= <<<EOF
 				<li><a href="{$url}" title="Accéder à la liste de tous les super-héros de {$universe}">{$universe}</a></li>
 
 EOF;
 		}
+
+		$base = $_SERVER['SECRET_AVENGER_PATH'];
+		$homepageUrl = SecretAvenger::url('home');
 
 		echo <<<EOF
 <!DOCTYPE html>
@@ -90,18 +93,18 @@ EOF;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width"/>
 		<title>{$title}</title>
-		<link rel="stylesheet" type="text/css" href="assets/style.css" />
+		<link rel="stylesheet" type="text/css" href="{$base}/assets/style.css" />
 	</head>
 	<body>
 		<header>
-			<a href="." title="Accéder à la page d'accueil">
+			<a href="{$homepageUrl}" title="Accéder à la page d'accueil">
 				<h1>Secret Avenger</h1>
 				<p>La base internationale des super-héros</p>
 			</a>
 		</header>
 		<nav>
 			<ul>
-				<li><a href="." title="Accéder à la page d'accueil">Tous les super-héros</a></li>
+				<li><a href="{$homepageUrl}" title="Accéder à la page d'accueil">Tous les super-héros</a></li>
 {$universes}
 			</ul>
 		</nav>

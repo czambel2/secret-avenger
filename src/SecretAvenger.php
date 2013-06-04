@@ -23,11 +23,28 @@ abstract class SecretAvenger
 	 */
 	public static function url($page, $args = array())
 	{
-		$url = 'index.php?page=' . urlencode($page);
+		$url = $_SERVER['SECRET_AVENGER_PATH'];
 
-		foreach($args as $key => $value)
+		// On tente déjà de générer une URL avec le rewriting
+		switch($page)
 		{
-			$url .= '&' . urlencode($key) . '=' . urlencode($value);
+			case 'home':
+				break;
+			case 'superhero':
+				$url .= '/' . $args['slug'] . '.html';
+				break;
+			case 'universe':
+				$url .= '/universe/' . $args['slug'] . '.html';
+				break;
+			default:
+				// aucune "route" disponible : on encode l'URL manuellement
+				$url .= '/index.php?page=' . urlencode($page);
+
+				foreach($args as $key => $value)
+				{
+					$url .= '&' . urlencode($key) . '=' . urlencode($value);
+				}
+				break;
 		}
 
 		return $url;

@@ -2,12 +2,12 @@
 
 <!DOCTYPE superheroes SYSTEM "superheroes.dtd">
 <superheroes>
-	<superhero id="1" wikipediaArticleName="Iron Man (comics)">
+	<superhero id="1" wikipediaArticleName="Iron Man (comics)" slug="iron-man">
 		<nickname>Iron Man</nickname>
 		<firstName>Tony</firstName>
 		<lastName>Stark</lastName>
 
-		<universe>Marvel</universe>
+		<universe slug="marvel">Marvel</universe>
 
 		<description>
 			<![CDATA[
@@ -37,12 +37,12 @@
 		</sidekicks>
 	</superhero>
 
-	<superhero id="2" wikipediaArticleName="Veuve noire (comics)">
+	<superhero id="2" wikipediaArticleName="Veuve noire (comics)" slug="veuve-noire">
 		<nickname>Black widow</nickname>
 		<firstName>Natasha</firstName>
 		<lastName>Romanova</lastName>
 
-		<universe>Marvel</universe>
+		<universe slug="marvel">Marvel</universe>
 
 		<description>
 			<![CDATA[
@@ -66,12 +66,12 @@
 		<sidekicks/>
 	</superhero>
 
-	<superhero id="3" wikipediaArticleName="Hulk">
+	<superhero id="3" wikipediaArticleName="Hulk" slug="hulk">
 		<nickname>Hulk</nickname>
 		<firstName>Robert</firstName>
 		<lastName>Banner</lastName>
 
-		<universe>Marvel</universe>
+		<universe slug="marvel">Marvel</universe>
 
 		<description>
 			<![CDATA[
@@ -96,12 +96,12 @@
 		<sidekicks/>
 	</superhero>
 
-	<superhero id="4" wikipediaArticleName="Thor (Marvel Comics)">
+	<superhero id="4" wikipediaArticleName="Thor (Marvel Comics)" slug="thor">
 		<nickname>Thor</nickname>
 		<firstName>Thor</firstName>
 		<lastName>Odinson</lastName>
 
-		<universe>Marvel</universe>
+		<universe slug="marvel">Marvel</universe>
 
 		<description>
 			<![CDATA[
@@ -131,12 +131,12 @@
 		<sidekicks/>
 	</superhero>
 
-	<superhero id="5" wikipediaArticleName="Batman">
+	<superhero id="5" wikipediaArticleName="Batman" slug="batman">
 		<nickname>Batman</nickname>
 		<firstName>Bruce</firstName>
 		<lastName>Wayne</lastName>
 
-		<universe>DC</universe>
+		<universe slug="dc">DC</universe>
 
 		<description>
 			<![CDATA[
@@ -172,12 +172,12 @@
 		</sidekicks>
 	</superhero>
 
-	<superhero id="6" wikipediaArticleName="Spider-Man">
+	<superhero id="6" wikipediaArticleName="Spider-Man" slug="spider-man">
 		<nickname>Spider-Man</nickname>
 		<firstName>Peter</firstName>
 		<lastName>Parker</lastName>
 
-		<universe>Marvel</universe>
+		<universe slug="marvel">Marvel</universe>
 
 		<description>
 			<![CDATA[
@@ -214,12 +214,12 @@
 		<sidekicks />
 	</superhero>
 
-	<superhero id="7" wikipediaArticleName="Superman">
+	<superhero id="7" wikipediaArticleName="Superman" slug="superman">
 		<nickname>Superman</nickname>
 		<firstName>Clark</firstName>
 		<lastName>Kent</lastName>
 
-		<universe>DC</universe>
+		<universe slug="dc">DC</universe>
 
 		<description>
 			<![CDATA[
@@ -260,12 +260,12 @@
 		<sidekicks />
 	</superhero>
 
-	<superhero id="8" wikipediaArticleName="Wonder_Woman">
+	<superhero id="8" wikipediaArticleName="Wonder Woman" slug="wonder-woman">
 		<nickname>Wonder Woman</nickname>
 		<firstName>Diana</firstName>
 		<lastName>Prince</lastName>
 
-		<universe>DC</universe>
+		<universe slug="dc">DC</universe>
 
 		<description>
 			<![CDATA[
