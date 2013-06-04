@@ -30,6 +30,11 @@ class Layout
 	 */
 	protected $parser;
 
+	/*
+	 * @var array Un tableau pour le Breadcrumb 
+	 */
+	protected $breadcrumb;
+	
 	/**
 	 * Construit un nouvel objet Layout.
 	 *
@@ -42,6 +47,7 @@ class Layout
 	{
 		$this->title = $title;
 		$this->layout = self::EXTENDED_LAYOUT;
+		$this->breadcrumb = array();
 		ob_start();
 	}
 
@@ -80,7 +86,24 @@ class Layout
 
 		return self::$instance;
 	}
+	
+	/*
+	 * @param string $key Clé qui sera afficher
+	 * @param string $url Url pour le breadcrumb
+	 */
+	public function addBreadcrumb($key,$url){
+		$this->breadcrumb[$key] = $url;
+	}
 
+
+	public function getBreadcrumb(){
+		$return = '';
+		foreach($this->breadcrumb as $key => $value){
+			$return .= "<li><a href='{$value}'>{$key}</a></li>";
+		}
+		return $return;
+	}
+	
 	/**
 	 * Récupère le design étendu.
 	 * @param  string $contents Le contenu à afficher dans la page.
@@ -104,6 +127,7 @@ EOF;
 
 		$base = $_SERVER['SECRET_AVENGER_PATH'];
 		$homepageUrl = SecretAvenger::url('home');
+		$breadcrumb = $this->getBreadcrumb();
 
 		return <<<EOF
 <!DOCTYPE html>
@@ -113,6 +137,7 @@ EOF;
 		<meta name="viewport" content="width=device-width"/>
 		<title>{$title}</title>
 		<link rel="stylesheet" type="text/css" href="{$base}/assets/style.css" />
+		<link rel="stylesheet" type="text/css" href="{$base}/assets/breadcrumb.css" />
 	</head>
 	<body>
 		<header>
@@ -127,6 +152,11 @@ EOF;
 {$universes}
 			</ul>
 		</nav>
+		<div>
+		<ul class="breadcrumb"> 
+			{$breadcrumb}
+		</ul>
+		</div>
 {$contents}
 		<footer>
 			<p>

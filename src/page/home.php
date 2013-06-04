@@ -2,7 +2,7 @@
 
 // On récupère la liste de tous les super-héros
 $heroes = $parser->getAll();
-
+Layout::getInstance()->addBreadcrumb("Accueil",".");
 ?>
 
 <ul class="super-hero-list">
