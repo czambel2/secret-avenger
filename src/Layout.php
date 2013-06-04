@@ -98,8 +98,8 @@ EOF;
 	<body>
 		<header>
 			<a href="{$homepageUrl}" title="Accéder à la page d'accueil">
-				<h1>Secret Avenger</h1>
-				<p>La base internationale des super-héros</p>
+				<div class="main-title"><strong>Secret Avenger</strong></div>
+				<div class="sub-title"><em>La base internationale des super-héros</em></div>
 			</a>
 		</header>
 		<nav>

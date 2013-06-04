@@ -11,14 +11,12 @@ header a, footer, nav ul li a, .super-hero-list li a, section.main {
 }
 
 .thumbnail img, .super-hero-list li img {
-
 	border: 1px #2fb335 solid;
 	outline: 1px #057c1c solid;
 }
 
 body {
 	background-color: #056;
-
 	font-family: Ubuntu, sans-serif;
 	color: #daa520;
 	max-width: 960px;
@@ -40,14 +38,20 @@ header a {
 	border-radius: 16px;
 }
 
-header h1 {
+header div.main-title {
+	margin: 24px;
 	font-size: 36pt;
 	font-weight: bold;
 }
 
+header div.sub-title {
+	margin: 24px;
+	font-size: 14pt;
+}
+
 nav {
 	margin: 0 auto;
-	width: 960px;
+	max-width: 960px;
 }
 
 nav ul {
@@ -103,6 +107,12 @@ nav ul li a {
 	border-radius: 3px;
 }
 
+.super-hero-list li strong {
+	display: inline-block;
+	margin: 8px;
+	font-size: 18pt;
+}
+
 section.main {
 	padding: 8px;
 	margin: 16px 0;
@@ -115,13 +125,21 @@ section.main {
 	margin: 16px;
 }
 
-aside.identity-card:after
+.identity-card:after
 {
 	display: block;
 	clear: left;
 }
 
-aside.identity-card p {
+.identity-card h1 {
+	font-size: 18pt;
+}
+
+.identity-card h1 span {
+	font-size: medium;
+}
+
+.identity-card p {
 	text-align: justify;
 }
 
@@ -179,6 +197,23 @@ footer a {
 @media screen and (max-width: 768px) {
 	body {
 		width: auto;
+	}
+
+	header div.main-title {
+		font-size: 24pt;
+	}
+
+	nav {
+		margin-top: 16px;
+	}
+
+	nav ul li {
+		margin: 4px;
+	}
+
+	nav ul li a {
+		border: 4px #057c1c solid;
+		border-radius: 4px;
 	}
 
 	.super-hero-list li {
