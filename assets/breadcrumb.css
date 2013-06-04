@@ -40,18 +40,18 @@
   border-left: 1em solid #ddd;
   right: -1em;
 }
-.breadcrumb li a{background:#057C1C;}	
+.breadcrumb li a{background:#2fb335;}	
 .breadcrumb li a::after{
-  border-left: 1em solid #057C1C;}	
-.breadcrumb li a:hover{background:#118811;}
+  border-left: 1em solid #2fb335;}	
+.breadcrumb li a:hover{background:#057c1c;}
 .breadcrumb li a:hover:after{
-  border-left: 1em solid #118811;}	
+  border-left: 1em solid #057c1c;}	
 .breadcrumb li a::before{
-  border-color: #057C1C #057C1C #057C1C transparent;}
+  border-color: #2fb335 #2fb335 #2fb335 transparent;}
   
   
 .breadcrumb li a:hover:before{
-  border-color: #118811 #118811 #118811 transparent;}
+  border-color: #057c1c #057c1c #057c1c transparent;}
 
   .breadcrumb li:nth-child(1) a::before{
   content:none;}	
