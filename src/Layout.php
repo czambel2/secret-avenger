@@ -30,8 +30,8 @@ class Layout
 	 */
 	protected $parser;
 
-	/*
-	 * @var array Un tableau pour le Breadcrumb 
+	/**
+	 * @var array La liste des liens à inclure dans le fil d'Ariane.
 	 */
 	protected $breadcrumb;
 	
@@ -149,7 +149,6 @@ EOF;
 		<meta name="viewport" content="width=device-width"/>
 		<title>{$title}</title>
 		<link rel="stylesheet" type="text/css" href="{$base}/assets/style.css" />
-		<!-- <link rel="stylesheet" type="text/css" href="{$base}/assets/breadcrumb.css" /> -->
 	</head>
 	<body>
 		<header>
