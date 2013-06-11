@@ -49,6 +49,8 @@ class Layout
 		$this->layout = self::EXTENDED_LAYOUT;
 		$this->breadcrumb = array();
 		ob_start();
+
+		$this->addBreadcrumb('Accueil', SecretAvenger::url('home'));
 	}
 
 	/**
@@ -80,27 +82,37 @@ class Layout
 	 */
 	public static function getInstance()
 	{
-		if (!self::$instance) {
+		if (!self::$instance)
+		{
 			self::$instance = new self();
 		}
 
 		return self::$instance;
 	}
 	
-	/*
-	 * @param string $key Clé qui sera afficher
-	 * @param string $url Url pour le breadcrumb
+	/**
+	 * Ajoute un élément au fil d'Ariane.
+	 * @param string $key Le nom de la page à afficher.
+	 * @param string $url L'URL de la page à afficher.
+	 * @return $this
 	 */
-	public function addBreadcrumb($key,$url){
+	public function addBreadcrumb($key, $url)
+	{
 		$this->breadcrumb[$key] = $url;
+
+		return $this;
 	}
 
 
-	public function getBreadcrumb(){
+	public function getBreadcrumb()
+	{
 		$return = '';
-		foreach($this->breadcrumb as $key => $value){
-			$return .= "<li><a href='{$value}'>{$key}</a></li>";
+
+		foreach($this->breadcrumb as $name => $url)
+		{
+			$return .= '<li><a href="' . SecretAvenger::__($url) . '">' . SecretAvenger::__($name) . '</a></li>';
 		}
+
 		return $return;
 	}
 	
@@ -137,7 +149,7 @@ EOF;
 		<meta name="viewport" content="width=device-width"/>
 		<title>{$title}</title>
 		<link rel="stylesheet" type="text/css" href="{$base}/assets/style.css" />
-		<link rel="stylesheet" type="text/css" href="{$base}/assets/breadcrumb.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="{$base}/assets/breadcrumb.css" /> -->
 	</head>
 	<body>
 		<header>
@@ -153,7 +165,8 @@ EOF;
 			</ul>
 		</nav>
 		<div>
-		<ul class="breadcrumb"> 
+		<ul class="breadcrumb">
+			<strong>Vous êtes ici&#160;:</strong>
 			{$breadcrumb}
 		</ul>
 		</div>
@@ -206,6 +219,9 @@ EOF;
 	public function __destruct()
 	{
 		$contents = ob_get_clean();
+
+		// Forcer l'affichage du site en XHTML+XML
+		header("Content-Type: application/xhtml+xml,charset=utf-8");
 
 		if($this->layout == self::EXTENDED_LAYOUT)
 		{

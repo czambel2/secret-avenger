@@ -29,6 +29,7 @@ abstract class SecretAvenger
 		switch($page)
 		{
 			case 'home':
+				$url .= '/';
 				break;
 			case 'superhero':
 				$url .= '/' . $args['slug'] . '.html';

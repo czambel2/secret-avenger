@@ -297,5 +297,77 @@
 		
 		<sidekicks />
 	</superhero>
+
+	<!-- Test sur l'injection XSS
+
+	<superhero id="9" wikipediaArticleName="XSS" slug="xss">
+		<nickname>
+			<![CDATA[
+				XSS <script>alert('nickname');</script>
+			]]>
+		</nickname>
+		<firstName>
+			<![CDATA[
+				XSS <script>alert('firstName');</script>
+			]]>
+		</firstName>
+		<lastName>
+			<![CDATA[
+				XSS <script>alert('lastName');</script>
+			]]>
+		</lastName>
+
+		<universe slug="xss">
+			<![CDATA[
+				XSS <script>alert('universe');</script>
+			]]>
+		</universe>
+
+		<description>
+			<![CDATA[
+				XSS <script>alert('description');</script>
+			]]>
+		</description>
+
+		<picture>
+			<![CDATA[
+				'> "> XSS <script>alert('picture');</script>
+			]]>
+		</picture>
+
+		<superpowers>
+			<superpower>
+				<![CDATA[
+					XSS <script>alert('superpower');</script>
+				]]>
+			</superpower>
+		</superpowers>
+
+		<nemeses>
+			<nemesis>
+				<![CDATA[
+					XSS <script>alert('nemesis');</script>
+				]]>
+			</nemesis>
+		</nemeses>
+
+		<lovers>
+			<lover>
+				<![CDATA[
+					XSS <script>alert('nemesis');</script>
+				]]>
+			</lover>
+		</lovers>
+
+		<sidekicks>
+			<sidekick>
+				<![CDATA[
+						XSS <script>alert('nemesis');</script>
+					]]>
+			</sidekick>
+		</sidekicks>
+	</superhero>
+
+	-->
 </superheroes>
 

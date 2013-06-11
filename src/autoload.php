@@ -35,6 +35,8 @@ set_exception_handler(function(Exception $exception)
 	if($exception instanceof Avenger404Exception)
 	{
 		header("HTTP/1.0 404 Not Found");
+		require_once('src/page/not-found-404.php');
+		exit;
 	}
 	else
 	{

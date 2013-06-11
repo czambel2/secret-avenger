@@ -239,7 +239,7 @@ class SuperHeroParser
 			}
 		}
 
-		throw new Avenger404Exception("Impossible de charger le héros de slug $slug.");
+		throw new Avenger404Exception("Impossible de charger le héros nommé " . SecretAvenger::__($slug) . ".");
 	}
 
 	/**
