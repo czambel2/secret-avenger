@@ -1,7 +1,7 @@
 RewriteEngine on
 
-RewriteBase /lp71/secret-avenger
-SetEnv SECRET_AVENGER_PATH /lp71/secret-avenger
+RewriteBase /secret-avenger
+SetEnv SECRET_AVENGER_PATH /secret-avenger
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php [QSA,L]
